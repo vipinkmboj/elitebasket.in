@@ -1,12 +1,254 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <p>Please Note: Website under construction right now, will be available soon! thanks...</p>
-  </body>
-</html>
+
+<%- include('header')  %>
+<div class="item2"></div>
+
+<div class="item item3 main">
+    <div class="container welcome" id="homecontent"> <!--welcome div--> 
+              <% if(msg != '') {%> 
+                <h1 style="color: #EDF5E1"> <%= msg %> </h1>  
+              <% } %>
+               <!--<h1><a href="#" style="color: #EDF5E1; padding-top: 5em;">Note: Web Site Under Construction!</a></h1>
+               
+              
+               -->
+
+               <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                  <div class="numbertext">1 / 9</div>
+                  <a href="/getstarted"><img src="/images/pexels-tima-miroshnichenko-5717546.jpg" style="width:100%; height: 400px;" class="responsive"></a>
+                  <div class="text">
+                    
+                    <h1><a href="/categories" style="margin: 0; padding: 0;">Search By Categories</a></h1>
+                                       
+                  </div>
+                </div>
+                
+                <div class="mySlides fade">
+                  <div class="numbertext">2 / 9</div>
+                  <a href="/#howitworkscontent"><img src="images/pexels-pixabay-38519.jpg" style="width:100%; height: 400px;"></a>
+                  <div class="text">
+                    <h1 style="margin: 0; padding: 0;"><a href="/products" style="margin: 0; padding: 0;">Search By Products</a></h1>
+                   
+                   
+                  </div>
+                </div>
+                
+                <div class="mySlides fade">
+                  <div class="numbertext">3 / 9</div>
+                  <a href="/#aboutcontent"><img src="images/pexels-tima-miroshnichenko-5717546.jpg" style="width:100%; height: 400px;"></a>
+                  <div class="text">
+                    <h1 style="margin: 0; padding: 0;"><a href="/#aboutcontent" style="margin: 0; padding: 0;">About</a></h1>
+
+                   
+                  </div>
+                </div>
+
+                <div class="mySlides fade">
+                  <div class="numbertext">4 / 9</div>
+                  <a href="/faq"><img src="images/pexels-pixabay-38519.jpg" style="width:100%; height: 400px;"></a>
+                  <div class="text">
+                    
+                    <h1 style="margin: 0; padding: 0;"><a href="/faq" style="margin: 0; padding: 0;">FAQ</a></h1>
+                   
+                  </div>
+                </div>
+                
+                <div class="mySlides fade">
+                  <div class="numbertext">5 / 9</div>
+                  <a href="/help"><img src="images/pexels-tima-miroshnichenko-5717546.jpg" style="width:100%; height: 400px;"></a>
+                  <div class="text">
+                    <h1  style="margin: 0; padding: 0;"><a href="/help" style="margin: 0; padding: 0;">Help</a></h1>
+                                     
+                  </div>
+                </div>
+                
+                <div class="mySlides fade">
+                  <div class="numbertext">6 / 9</div>
+                  <a href="/affiliatemarketing"><img src="images/pexels-pixabay-38519.jpg" style="width:100%; height: 400px;"></a>
+                  <div class="text">
+                    <h1 style="margin: 0; padding: 0;"><a href="/affiliatemarketing" style="margin: 0; padding: 0;">Affiliate Marketing</a></h1>
+
+                   
+                  </div>
+                </div>
+
+                <div class="mySlides fade">
+                  <div class="numbertext">7 / 9</div>
+                  <a href="/signup"><img src="images/pexels-tima-miroshnichenko-5717546.jpg" style="width:100%; height: 400px;"></a>
+                  <div class="text">
+                    
+                    <h1 style="margin: 0; padding: 0;"><a href="/signup" style="margin: 0; padding: 0;">Sign Up</a></h1>
+                    
+                  </div>
+                </div>
+                
+                <div class="mySlides fade">
+                  <div class="numbertext">8 / 9</div>
+                  <a href="/signin"><img src="images/pexels-pixabay-38519.jpg" style="width:100%; height: 400px;"></a>
+                  <div class="text">
+                    <h1 style="margin: 0; padding: 0;"><a href="/signin" style="margin: 0; padding: 0;">Sign in</a></h1>
+                  
+                  </div>
+                </div>
+
+                <div class="mySlides fade">
+                  <div class="numbertext">9 / 9</div>
+                  <a href="/contactus"><img src="images/pexels-tima-miroshnichenko-5717546.jpg" style="width:100%; height: 400px;"></a>
+                  <div class="text">
+                    <h1 style="margin: 0; padding: 0;"><a href="/contactus" style="margin: 0; padding: 0;">Contact Us</a></h1>
+
+                   
+                  </div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                
+                </div>
+                <br>
+                
+                <div style="text-align:center">
+                  <span class="dot" onclick="currentSlide(1)"></span> 
+                  <span class="dot" onclick="currentSlide(2)"></span> 
+                  <span class="dot" onclick="currentSlide(3)"></span> 
+                  <span class="dot" onclick="currentSlide(4)"></span> 
+                  <span class="dot" onclick="currentSlide(5)"></span> 
+                  <span class="dot" onclick="currentSlide(6)"></span> 
+                  <span class="dot" onclick="currentSlide(7)"></span> 
+                  <span class="dot" onclick="currentSlide(8)"></span> 
+                  <span class="dot" onclick="currentSlide(9)"></span> 
+
+                </div>
+                <script>
+                  
+                  var autoSlideIndex = 0;
+                  autoShowSlides();
+                  
+                  function autoShowSlides() {
+                  var i;
+                  var autoSlides = document.getElementsByClassName("mySlides");
+                  var dots = document.getElementsByClassName("dot");
+                  for (i = 0; i < autoSlides.length; i++) {
+                    autoSlides[i].style.display = "none";  
+                  }
+                  autoSlideIndex++;
+                  if (autoSlideIndex > autoSlides.length) {autoSlideIndex = 1}    
+                  for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  autoSlides[autoSlideIndex-1].style.display = "block";  
+                  dots[autoSlideIndex-1].className += " active";
+                  setTimeout(autoShowSlides, 3500); // Change image every 2 seconds
+                }
+
+                  //
+                  var slideIndex = 1;
+                  showSlides(slideIndex);
+                  function plusSlides(n) {
+                    showSlides(slideIndex += n);
+                  }
+                  
+                  function currentSlide(n) {
+                    showSlides(slideIndex = n);
+                  }
+                  
+                  function showSlides(n) {
+                    var i;
+                    var slides = document.getElementsByClassName("mySlides");
+                    var dots = document.getElementsByClassName("dot");
+                    if (n > slides.length) {slideIndex = 1}    
+                    if (n < 1) {slideIndex = slides.length}
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";  
+                    }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex-1].style.display = "block";  
+                    dots[slideIndex-1].className += " active";
+                    
+                  }
+                  </script>
+                  
+
+               <!---->
+
+
+               <!--
+               <h1><a href="/getstarted">Get Started</a></h1>
+               <h2 class="homepage-slogan">Take your Small Business to the Next Level</h2>
+               <div class="row">           
+                <div class="column column-left">
+                  <h3><a href="/getstarted" style="text-decoration: none;">Start Building a Website</a></h3>
+                  <h3><a href="/#howitworkscontent" style="text-decoration: none;">Let's Make it Easy</a></h3>
+                  <h3><a href="/#first-timers" style="text-decoration: none;">First Timers</a></h3>
+                  <h3><a href="/#old-customers" style="text-decoration: none;">Old Customers</a></h3>
+                                                 
+                </div>
+                <div class="column column-right">
+                  <h3><a href="/startearning" style="text-decoration: none;">Start Earning</a></h3>
+                  <h3><a href="/templates" style="text-decoration: none;">Templates</a></h3>
+                  <h3><a href="#" onclick="openSignInModal()" style="text-decoration: none;">Find Freelancer</a></h3>
+                  <h3><a href="/specialoffers" style="text-decoration: none;">Special Offers</a></h3>   
+                  -->                  
+                  <!-- <h3><a href="#" onclick="openContactModal()" style="text-decoration: none;">Ask Us</a></h3> -->                     
+                <!--</div> -->
+         <!-- </div>--> <!--row div ends-->
+    </div><!--welcome div ends here-->
+      
+     
+     <!-- About Content Stats here-->
+     
+     <div class="about" id="aboutcontent">
+          <h2>About</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem repudiandae tempore modi voluptates qui magni maxime ea ut officia ipsum ab ipsam eveniet similique excepturi, dicta placeat mollitia quasi rerum!         
+          </p>
+          
+        </div>
+    
+        <!-- About Content ends here-->
+
+        <!-- Services Content Stats here-->
+     <div class="categories" id="categoriescontent">
+          <h2>Categories</h2>
+          
+          <div class="row">
+            <div class="column column-left">
+              <h3 style="text-align: center;">Type 1</h3>
+              <ul>
+                <li><a href="#">Category 1</a></li>
+                <li><a href="#">Category 1</a></li>
+                <li><a href="#">Category 1</a></li>
+                <li><a href="#">Category 1</a></li>
+                <li><a href="#">Category 1</a></li>
+                <li><a href="#">Category 1</a></li>
+              </ul>                
+            </div>
+            <div class="column column-right">
+                <h3>Type 2</h3>
+                <ul>
+                  <li><a href="#">Category 1</a></li>
+                  <li><a href="#">Category 1</a></li>
+                  <li><a href="#">Category 1</a></li>
+                  <li><a href="#">Category 1</a></li>
+                  <li><a href="#">Category 1</a></li>
+                  <li><a href="#">Category 1</a></li>
+                </ul> 
+            </div>
+          </div>
+          
+            <h4 style="text-align: center; margin: auto;">Didn't find the right product, you are looking for? <a href="/#productscontent">Search by Products</a></h4>
+            
+        </div>                        
+        <!-- Services Content ends here-->            
+            
+       
+</div> <!--main div ends here-->    
+    
+<div class=" item4"></div>
+
+
+
+<%- include('footer') %> 

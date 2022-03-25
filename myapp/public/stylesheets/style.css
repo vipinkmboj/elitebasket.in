@@ -1,12 +1,2818 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: red;
-  color: whitesmoke;
-  text-align: center;
-  font-size: 1.5em;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  
 }
 
-a {
-  color: #00B7FF;
+
+body {    
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #5CDB95;
+  color: #05386B;
+  
+}
+@media only screen and (min-width: 280px) {
+  body {      
+    font-size: 1.5em;
+    /*max-width: 480px;*/
+  }
+}
+@media only screen and (min-width: 480px) {
+  body {      
+    font-size: 2em;
+    /*max-width: 480px;*/
+  }
+}
+@media only screen and (min-width: 768px) {
+  body {      
+    font-size: 2em;
+    
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+   
+    font-size: 1.5em;
+    
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  body {
+    
+    font-size: 1.5em;
+    
+  }
+}
+
+.item {
+  /*border-bottom: 2px solid whitesmoke;
+  border-collapse: collapse;*/
+  padding: .5em;
+  margin: 0;
+}
+
+.item1 { 
+  grid-area: header;
+  height: 5em; 
+  /*height: 60px;*/  
+  position: fixed;
+  top: 0;  
+  width: 100%;  
+  background-color: #8EE4AF;
+  color: #05386B;
+ 
+  /*border-bottom: 3px solid whitesmoke;*/
+  
+  z-index: 1;
+}
+/*
+.item2 { 
+  grid-area: menu;
+  height: 100vh;
+  
+ }
+ */
+.item3 { 
+  grid-area: main;  
+  height: auto;  
+  margin: 2.5em auto auto auto;
+  
+  padding-top: 3.5em .5em .5em .5em;  
+  
+}
+
+/*
+.item4 { 
+  grid-area: right;
+  height: auto;
+}
+*/
+.item5 { 
+  grid-area: footer;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'main main main main main main'
+    'footer footer footer footer footer footer';
+  /*grid-gap: 10px;*/  
+   background-color: transparent;
+}
+
+
+/* header css starts */
+.header {  
+   
+  
+  color: #05386B;
+ 
+  /*background-color: rgba(238, 135, 97, .6);*/
+}
+.header .contact-nav {
+  background-color: #8EE4AF;
+  color: #05386B;
+}
+.header .contact-nav a {
+  color: #05386B;
+}
+.header .contact-nav a:hover {
+  color: #379683;
+}
+.header .contact-nav .mail-icon {
+  position: relative;
+  top: .2em;
+  right: .5em;
+  
+}
+.header .headernav {
+  display: flex; 
+  position: absolute;
+  top: 5em;
+  right: 1.2em;
+  font-size: 1.25em;
+}
+.header .headernav ul {
+  display: flex; 
+  
+}
+.header .headernav ul li {
+   list-style: none;  
+}
+
+.header .headernav ul li a {
+  text-decoration: none;
+  color: #05386B;
+  font-size: 1.25;
+  padding: .7em;
+  text-align: center;
+}
+.header .headernav ul li a:hover {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+  color: #379683;
+   
+}
+/* dropdown menu css */
+.dropdown {
+  position: relative;  
+  text-align: left;
+}
+.header .headernav ul li ul { 
+  position: absolute;
+  left: 0;  
+  padding: 0;
+  width: max-content;
+  background-color: #8EE4AF;
+  color: #05386B;  
+  border-radius: 5px;
+  overflow: auto;
+  display: none;
+  
+  z-index: 1;
+}
+
+.header .headernav ul li ul li{
+  border: 1px solid #05386B;;  
+}
+.header .headernav ul li ul li a {
+  text-align: left;
+  padding: 5px;
+  font-size: 1em;
+}
+
+.header .headernav ul li:hover ul {
+  display: block;  
+  overflow: hidden;
+  
+}
+.account {
+  position: relative;
+}
+.account ul {
+  position: absolute;
+  right: 0;
+}
+.cart {
+  position: relative;
+}
+.notification {
+  position: absolute;
+  top: -10px;
+  right: 5px;
+  color: blue;
+  /*display: none;*/
+}
+.cart-sidenav {    
+  position: relative;
+  padding-top: .6em;
+
+}
+.notification-sidenav {
+  position: absolute;
+  top: -3px;
+  left: 47px;
+  color: blue;
+  font-size: .7em;
+}
+/*
+.cart[title] {
+  background-color: rgba(238, 135, 97, .6);
+  color: whitesmoke;
+}
+*/
+@media only screen and (min-width: 280px) and (max-width: 480px) { 
+  .header .headernav ul {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 1024px) { 
+  .header .headernav ul:not(:last-child) {
+    display: none;
+  }
+  
+  .header .headernav {
+    display: flex; 
+    position: absolute;
+    top: 1.6em;
+    right: 1.2em;
+    font-size: 1.25em;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 768px)  {
+  .header .headernav .cart {
+    display: none;
+  }
+}
+
+/*
+@media screen and (max-width: 800px) {
+  .header .headernav ul:not(:last-child) {
+    display: none;
+  }
+}
+*/
+
+/* header css ends */
+/*iconbar css starts*/
+.item1 .iconbar {
+  position: absolute;
+  top: 4em;
+  left: .9em;
+  font-size: 1.7em;
+  color: #05386B;
+  
+} 
+.item1 .iconbar:hover {
+  cursor: pointer;
+  /*color: rgb(180, 175, 175);*/
+  color: #379683;
+  z-index: 1;
+}
+/*iconbar css ends*/
+/* brand-title css starts*/
+.item1 .brand-title {
+  position: absolute;
+  top: 4em;
+  left: 3.5em;
+  font-size: 25px;  
+  text-decoration: none;
+  color: #05386B;
+  font-weight: bolder;
+}
+
+@media only screen and (min-width: 280px) and (max-width: 768px) { 
+  .item1 .brand-title {
+    position: absolute;
+    top: .6em;
+    right: 3.5em;    
+    font-size: 25px;  
+    text-decoration: none;
+    color: #05386B;
+    font-weight: bolder;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) { 
+  .item1 .brand-title {
+    position: absolute;
+    top: .6em;
+    left: 6em;
+    font-size: 25px;  
+    text-decoration: none;
+    color: #05386B;
+    font-weight: bolder;
+  }
+}
+/* brand title css ends */
+
+/* sidenav css starts */
+.item1 .sidenav-parent {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100vh;
+  background-color: transparent;
+  text-align: left;
+  
+  
+}
+.item1 .sidenav-parent .sidenav {
+  width: 0;
+  height: 100vh;
+  display: block;
+  background-color: #8EE4AF;
+  color: #05386B; 
+  position: fixed;
+  z-index: 1;
+  overflow-x: auto;
+  overflow-y: auto;
+  transition: 0.4s;
+  padding-top: 4em;
+  position: relative;
+  
+}
+.item1 .sidenav-parent .sidenav ul {
+  display: block;
+  width: 100%;  
+  
+}
+.item1 .sidenav-parent .sidenav ul li {
+  list-style: none; 
+  overflow: hidden; 
+  
+}
+.item1 .sidenav-parent .sidenav ul li a {
+  text-decoration: none;
+  color: #05386B; 
+  font-size: 1.25em;
+  padding: 1.25em;
+  text-align: left;
+  
+}
+/*
+.signout-btn-list {    
+  padding-left: 1.25em;
+  background-color: aquamarine;
+}
+.item1 .sidenav-parent .sidenav ul li form {    
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  background-color: aqua;
+}
+*/
+.item1 .sidenav-parent .sidenav ul li form .signoutBtn {
+  margin: 0;
+  /*padding-left: 0;*/
+  padding-left: 1.25em;
+  text-align: left;
+  
+}
+.item1 .sidenav-parent .sidenav ul li a:hover {
+  color: #379683;
+}
+.item1 .sidenav-parent .sidenav ul li .closeBtn {
+  position: absolute;
+  top: -1em;
+  right: -.5em;
+  font-size: 2em;
+  font-weight: bolder;
+}
+.item1 .sidenav-parent .sidenav ul li .closeBtn:hover {
+  color: #379683;
+}
+
+/* dropdown css for sidenav */
+.item1 .sidenav-parent .sidenav ul li ul {
+  padding: 0;
+  width: max-content;
+  background-color: #8EE4AF;
+  color: #05386B; 
+  overflow: auto;
+  display: none;
+  
+}
+.item1 .sidenav-parent .sidenav ul li ul li {
+  border: 1px solid whitesmoke;
+}
+.item1 .sidenav-parent .sidenav ul li ul li a {
+  font-size: 1.25em;
+}
+.item1 .sidenav-parent .sidenav ul li ul li a:hover {
+
+  color: #379683;
+
+}
+.item1 .sidenav-parent .sidenav ul li:hover ul {
+  display: block;
+}
+.signoutBtn {
+  background-color: #8EE4AF;
+  color: #05386B; 
+  border: none;
+  outline: none;
+  font-size: 1.25em;
+}
+.signoutBtn:hover {
+  color: #379683;
+}
+
+
+/* sidenav css ends */
+
+/* footer css starts*/
+.footer {  
+
+  /* 
+  width: 100%;
+  height: auto;
+  */
+  background-color: #8EE4AF;
+  color: #05386B;  
+  /*margin-top: 3.8em;*/
+  
+  margin-bottom: 0;  
+  padding: 1.9em;  
+}
+.footer #taptotopButton {
+  width: 100%;
+  height: auto;
+  font-size: 1.3em;
+  padding-bottom: .65em;  
+  border: none;
+  outline: none;
+  background-color: #8EE4AF;
+  color: #05386B;
+  margin-top: 5em;
+  margin-bottom: 0;
+}
+.footer #taptotopButton:hover {
+ 
+  color: #379683;
+}
+.footer .row {
+  display: flex; 
+  width: 100%; 
+  height: auto;
+  
+}
+
+.footer .row .column {
+  width: 33%;  
+  height: auto;
+  margin: auto;
+  background-color: #8EE4AF;
+  color: #05386B;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+.footer .row .column ul {
+  
+  text-align: left;
+  font-size: 1.1em;
+  padding-left: 20%;
+}
+.footer .row .column ul li {
+  list-style: none;
+}
+.footer .row .column ul li a {
+  text-decoration: none;
+  
+  color: #05386B;
+  
+}
+.footer .row .column ul li a:hover {
+  
+  color: #379683;
+  
+}
+.footer .row .column-4 a {
+  padding: 5%;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+@media screen and (min-width: 280px) and (max-width: 380px){
+  .footer .row .column-3 ul {    
+    text-align: left;
+    font-size: 1em;
+    padding-left: 10%;
+  }
+}
+@media screen and (min-width: 768px){
+  .footer .row .column-3 ul {    
+    text-align: left;
+    font-size: 1.1em;
+    padding: 5% 5% 0 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer .row {
+    display: block;
+     
+  }
+  .footer .row .column {    
+    width: 100%; 
+    height: auto;
+  }
+  
+}
+/* footer css ends */
+
+
+
+/* main css*/
+.main .welcome {
+  background-color: transparent;
+  max-width: 100%;
+  height: auto;
+  padding-top: 6em;
+  margin-top: auto;
+  border-bottom: 1px solid whitesmoke;
+  
+}
+.main .welcome h1, .main .welcome h2 {
+  text-align: center;
+}
+ /* */
+
+.main .welcome .slideshow-container {
+  width: 100%;
+  height: auto;
+  margin-top: 4em;
+  /*padding: 0;
+  margin: 0;*/
+}
+.main .welcome .slideshow-container .mySlides {
+display: none;
+width: 100%;
+height: auto;
+/*padding: 1em;*/
+z-index: 1;
+
+}
+.main .welcome .slideshow-container .mySlides img {
+vertical-align: middle;
+
+
+/*position: relative;*/
+}
+
+/* Slideshow container */
+.slideshow-container {
+/*
+max-width: 1000px; */
+max-width: 100%;
+height: auto;
+position: relative;
+margin: auto;
+text-align: center;
+}
+
+/* Next & previous buttons */
+.main .welcome .slideshow-container .prev, .main .welcome .slideshow-container .next {
+cursor: pointer;
+position: absolute;
+top: 50%;
+width: auto;
+padding: 1em;
+margin-top: -22px;
+color: rgb(29, 115, 196);
+font-weight: bold;
+font-size: 1.2em;
+transition: 0.6s ease;
+border-radius: 0 3px 3px 0;
+user-select: none;
+}
+
+.prev {
+left: .5em;
+border-radius: 3px 0 0 3px;
+}
+/* Position the "next button" to the right */
+.next {
+right: .5em;
+border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+background-color: rgba(63, 58, 58, 0.8);
+}
+
+/* Caption text */
+.text {
+color: #f2f2f2;
+font-size: 1em;
+padding: .5em .75em;
+position: absolute;
+/*bottom: 8px;*/
+/*top: 8px;*/
+top: 45%;
+
+width: 100%;
+text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+color: #f2f2f2;
+font-size: 12px;
+padding: 8px 12px;
+position: absolute;
+top: 1em;
+z-index: 2;
+color: rgb(29, 115, 196);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+cursor: pointer;
+height: 15px;
+width: 15px;
+margin: 0 2px;
+background-color: #05386B;
+  
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+background-color: #379683;
+}
+
+/* Fading animation */
+.fade {
+-webkit-animation-name: fade;
+-webkit-animation-duration: 4s;
+animation-name: fade;
+animation-duration: 4s;
+}
+
+@-webkit-keyframes fade {
+from {opacity: .7} 
+to {opacity: 1}
+}
+
+@keyframes fade {
+from {opacity: .7} 
+to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+.prev, .next,.text {font-size: 11px}
+}
+
+/* */
+
+.main .welcome figure {
+  margin: 1.2em auto 0 auto;
+}
+.main .welcome .user-name {
+  margin: 0 auto 0 auto;
+  padding: 0;
+  display: none;
+}
+
+.main .welcome .user-name a {
+  margin: 0 auto 0 auto;
+  padding: 0;
+}
+.main .welcome .user-name a em {
+  margin: 0 auto 0 auto;
+  padding: 0;
+}
+
+
+@media screen and (min-width: 280px) and (max-width: 480px) {
+  .main .welcome .user-name {
+    display: block;
+  }
+
+  
+ 
+  
+}
+/*
+.main .welcome .slideshow-container h1 {
+  text-align: center;
+  padding-bottom: 1.6em;  
+  color: rgb(29, 115, 196);   
+  margin: 2.6em auto auto auto;
+}*/
+.main .welcome .slideshow-container h2 {
+  margin: auto;
+  text-align: center;
+  color: whitesmoke;
+}
+
+.main .welcome .slideshow-container .row {
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  
+}
+.main .welcome .slideshow-container .row .column {
+  width: 50%;
+  height: auto;
+  margin: auto;
+  padding: 4.7em .5em .5em .5em;
+  
+  /*border: 1px solid white;  */
+  
+}
+.main .welcome .slideshow-container .row .column h3 {
+  text-align: left;  
+  color: whitesmoke; 
+  padding: .5em .5em .5em 33%;
+   
+  
+} 
+.build-your-website {
+  display: none;
+}
+@media screen and (min-width: 280px) and (max-width: 480px) {
+  .main .welcome .homepage-slogan {
+    display: none;
+  }
+}
+@media screen and (min-width: 280px) and (max-width: 480px) {
+  .main .welcome .slideshow-container .mySlides img {
+    max-width: 100%;
+
+    max-height: 250px;
+  }
+
+  .prev {
+    left: .1em;
+    
+  }
+  /* Position the "next button" to the right */
+  .next {
+    right: .1em;
+    
+  }
+  .main .welcome .slideshow-container .mySlides h1 {
+    font-size: large;
+  }
+  .build-your-website {
+    display: block;
+  }
+  .start-building-your-website {
+    display: none;
+  }
+}
+/* change it later
+@media (max-height: 350px) {
+
+  .main .welcome {
+    padding-top: 3em;
+  }
+  .main .welcome .slideshow-container {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    margin-top: 3em;
+    /*padding: 0;
+    margin: 0;*/
+    /*
+  }
+
+  .main .welcome .slideshow-container .mySlides img {
+    max-width: 100%;
+
+    max-height: 200px;
+  }
+}
+*/
+@media screen and (min-width: 280px) and (max-width: 768px){
+  
+  .main .welcome .row {
+    display: block;
+  }
+  .main .welcome .row .column {
+    width: 100%;
+  }
+}
+.how-it-works {
+  width: 100%;
+  height: auto;
+  margin: 2em 0 2em 0;
+  overflow: hidden;
+  border-bottom: 1px solid whitesmoke;
+}
+.how-it-works h2 {
+  margin: auto;
+  padding-top: 4.5em;
+}
+.how-it-works h4 {
+  padding: 4.2em 0 2em 0;
+}
+.how-it-works ol {
+  
+  color: whitesmoke;
+  text-align: left;
+  
+  margin: 3em;
+  padding-left: 1.5em;
+}
+.how-it-works ol li {
+  font-size: 1.25em;
+}
+
+.about {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  color: whitesmoke; 
+  margin: auto auto 0 auto;
+  text-align: center;
+  border-bottom: 1px solid whitesmoke;
+}
+.about h2 {
+  margin: auto;
+  padding-top: 4.5em;
+}
+.about p {
+  text-align: left;
+  font-size: 1.25em; 
+  padding: 3em 1.5em 0 1.5em; 
+}
+/* categories css starts now*/
+.categories {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  color: whitesmoke; 
+  /* 
+  padding: 3.2em .8em 0 .8em;
+  float: center;
+  */
+  text-align: center;
+  border: 1px solid whitesmoke;
+  border-left: none;
+  border-right: none;
+  margin: auto;
+
+}
+.categories h2 {
+    
+    padding-top: 4.5em;
+ 
+}
+.categories .row {
+  display: flex;
+  width: 100%;
+  padding: .97em;  
+  text-align: center;
+  
+}
+.categories .row .column {
+  width: 50%;
+  padding: .97em;  
+  text-align: center;  
+  
+}
+.categories .row .column ul{
+  float: left;  
+  padding-left: 1.9em;
+  text-align: left;
+  font-size: 1.25em;
+}
+.categories .row .column ul li a {
+  text-decoration: none;
+}
+.categories .row .column-right p {
+  float: left; 
+  padding-left: 1.9em;
+  text-align: left;
+  font-size: 1.25em;
+}
+.categories .row .column-right p a {
+  text-decoration: none;
+  font-size: 1.25em;
+}
+@media screen and (min-width: 280px) and (max-width: 480px) {
+
+  .categories .row {
+    display: block;
+    width: 100%;
+    padding: .97em;  
+    text-align: center;
+    
+  }
+  .categories .row .column {
+    width: 100%;
+    margin: 0 auto 0 auto;
+    padding: .97em;  
+    text-align: center;  
+    
+  }
+  .categories .row .column-right h3 {
+    padding-top: 4em;
+  }
+}
+
+/* Why us css starts */
+.whyus {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  color: whitesmoke; 
+  margin: auto auto 5em auto;
+  text-align: center;
+  border-bottom: 1px solid whitesmoke;
+}
+.whyus h2 {
+  margin: auto;
+  padding-top: 4.5em;
+}
+.whyus p {
+  text-align: left;
+  font-size: 1.25em; 
+  padding: 3em 1.5em 0 1.5em; 
+}
+/* Why Us css ends*/
+/* specialoffers css* starts*/
+.specialoffers {
+  margin-bottom: 5em;
+}
+
+/* specialoffers css* ends*/
+
+
+/* templates css* starts*/
+.templates {  
+  padding-bottom: 5em;
+}
+.templates h2 {
+  margin: auto;
+}
+.templates h3 {
+  margin: 1em auto 1em auto;
+}
+
+/* templates css* ends*/
+.class-img {
+  width: 100%;
+  /*max-width: 90%;*/
+  height: auto;
+  margin: auto auto 1em auto;
+}
+/* career css* starts*/
+.career {
+  
+  padding-bottom: 5em;
+}
+
+.career-submit {
+  padding: .5em;
+}
+@media screen and (min-width: 280px) and (max-width: 768px) {
+  .career-upload-input {
+    width: 100%;
+  }
+}
+
+
+.career table {
+
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  height: auto;
+  border: 1px solid whitesmoke;
+  margin-top: 4em;   
+
+}
+.career table tr {
+  height: auto;
+}
+.career table th, td {
+  text-align: left;
+  padding: 8px;
+  border: 2px solid whitesmoke;
+}
+
+.career table tr:nth-child(even){background-color: rgba(238, 135, 97, .6)}
+
+/* career css ends here*/
+
+/* dashboardcart css* starts*/
+
+.dashboardcart {    
+  padding-bottom: 5em;
+}
+.dashboardcart .cart-items {
+  width: 100%;
+  /*max-width: 100%; */
+  height: auto;
+  
+  margin-bottom: 3em;
+}
+.dashboardcart .cart-items .cart-row {
+  width: 100%;
+  height: auto;
+  /*max-width: 100%; */
+  
+  
+      
+}
+
+
+/*
+.dashboardpurchased .table-caption-anchor {
+  display: flex;
+  
+}
+*/
+/*
+.dashboardpurchased .image-container {
+  width: 100%;
+  height: auto;
+  margin: 1em auto 1em auto;  
+  padding: .5em;  
+  display: flex;
+  
+}
+.dashboardpurchased .image-container .column {
+  width: 33%;
+  max-width: 33%;
+  height: auto;
+  margin: 1em 0 1em 0;
+  padding: .5em;
+  text-align: center;
+  
+}
+*/
+
+/*
+.dashboardcart .cart-items, .dashboardpurchased .purchased-items {
+  padding-top: 3.8em;
+}
+
+.dashboardcart .cart-items, .dashboardpurchased .purchased-items table {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  padding: 2%;    
+}
+*/
+.dashboardcart .cart-items .cart-row table  {
+  width: 100%;    
+  height: auto;
+  max-width: 100%;    
+  margin: 1em auto 1em auto;     
+  text-align: left;
+  border-collapse: collapse;
+  /*padding: 1%;*/
+  /*padding-top: 2em;*/
+  table-layout: fixed;
+  
+}
+
+.dashboardcart table tr {
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+.dashboardcart table tr th {
+  width: 50%;
+  border: 2px solid whitesmoke; 
+  padding: 1.5%;  
+  text-align: center;  
+  font-size: 1.2em;
+  font-weight: bold; 
+  overflow: auto;
+  text-overflow: clip;
+  /*padding: 1%;*/
+  /*overflow: auto;*/
+  
+}
+
+.dashboardcart table tr td {
+  width: 50%;
+  border: 2px solid whitesmoke; 
+  overflow: auto;
+  /*text-overflow: clip; */
+  padding: 1%;
+  /*overflow: auto;*/ 
+  color: rgb(155, 155, 207);
+  overflow: auto;
+}
+
+table caption {
+  width: 100%;
+  height: auto;
+  overflow: auto;
+  /*display: flex;
+  justify-content: space-around; */
+}
+/*
+.table-caption-anchor {
+  display: flex;
+  
+}
+
+.dashboardcart .image-container {
+  width: 100%;
+  height: auto;
+  margin: 1em auto 1em auto;  
+  padding: .5em;  
+  display: flex;
+  
+}
+.dashboardcart .image-container .column {
+  width: 33%;
+  max-width: 33%;
+  height: auto;
+  margin: 1em 0 1em 0;
+  padding: .5em;
+  text-align: center;
+  
+}
+*/
+@media screen and (min-width: 280px) and (max-width: 768px) {
+  .dashboardcart .image-container {
+    width: 100%;
+    height: auto;
+    margin: 1em 0 1em 0;      
+    display: block;
+    
+  }
+  .dashboardcart .image-container .column {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 1em auto 1em auto;
+    padding: 1em 0 1em 0;
+    text-align: center;
+    
+  }
+}
+.cart-uploaded-content-div {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+}
+.cart-uploaded-content-div .row {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding: 1% 1% 1% 3%;
+  display: flex;
+}
+.cart-uploaded-content-div .row .column {
+  
+  width: 30%;
+  height: auto;
+  margin: auto;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .dashboardcart .image-container .column {
+    width: 50%;
+    max-width: 50%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    text-align: center;      
+  }
+  .cart-uploaded-content-div .row .column {    
+    width: 50%;
+  }
+}
+/*
+*/
+/*
+.template-selected-icon, .homepage-selected-icon, .aboutpage-selected-icon, .servicespage-selected-icon, .whyuspage-selected-icon, .social-media-feature-selected-icon, .contactuspage-selected-icon, .contactuspluscontactformpage-selected-icon, .policypage-selected-icon, .terms-and-conditions-selected-icon, .logo-by-customer-selected-icon, .logo-purchasing-selected-icon, .copy-right-selected-icon, .logo-by-customer-selected-icon, .gallery-page-selected-icon, .templates-feature-selected-icon .menu-page-selected-icon{
+  background-color: transparent;
+  border: none;
+  display: none;
+
+}
+/*
+.home-content-container, .about-content-container, .services-content-container, .why-us-content-container, .address-content-container, .phone-content-container, .social-media-content-container, .policy-content-container, .terms-and-conditions-content-container, .logo-by-customer-content-container,  .copy-right-content-container {
+  background-color: transparent;
+  border: none;
+  display: none;
+}
+/*
+.home-content-estimated-time, .about-content-estimated-time, .services-content-estimated-time, .why-us-content-estimated-time, .address-content-estimated-time, .phone-content-estimated-time, .social-media-content-estimated-time, .policy-content-estimated-time, .terms-and-conditions-content-estimated-time, .logo-by-customer-content-estimated-time,  .copy-right-content-estimated-time {
+  background-color: transparent;
+  border: none;
+  display: block;
+}
+*/
+/*.home-content-selected-icon, .about-content-selected-icon, .services-content-selected-icon, .why-us-content-selected-icon, .address-content-selected-icon, .phone-content-selected-icon, .social-media-content-selected-icon, .policy-content-selected-icon, .terms-and-conditions-content-selected-icon, .logo-by-customer-content-selected-icon,  .copy-right-content-selected-icon, .gallery-content-selected-icon, .template-feature-text-content-selected-icon, .template-feature-upload-content-selected-icon, .menu-content-selected-icon, .payment-method-content-selected-icon, .social-media-content-selected-icon {
+  background-color: transparent;
+  border: none;
+  display: none;
+
+}
+*/
+
+/* External features content css*/
+/*.text-content-for-gallery-container {
+  background-color: transparent;
+  border: none;
+  display: none;
+}
+*/
+
+
+
+/* dashboardcart css ends here*/
+.profile-image {
+  
+  margin: auto;
+  border-radius: 50%;
+}
+.profile-image:hover {
+  cursor: pointer;
+}
+/* dashhboardcustomerprofile css* starts*/
+.dashboardcustomerprofile {
+  
+  padding-bottom: 5em;
+}
+.dashboardcustomerprofile .row {
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  background-color: rgba(238, 135, 97, .6);
+  padding: 1.5%;
+  overflow: auto;
+  z-index: 1;
+  
+}
+.dashboardcustomerprofile .row .col-1 {
+  width: 30%;
+  height: auto;
+  text-align: left;
+  
+}
+.dashboardcustomerprofile .row .col-2 {
+  width: 70%;
+  height: auto;
+  text-align: left;
+  
+} 
+@media screen and (min-width: 280px) and (max-width: 480px) {
+  .cart-uploaded-content-div .row {
+    display: block;
+  }
+  .cart-uploaded-content-div .row .column {
+  
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 280px) and (max-width: 768px) {
+  
+  .dashboardcustomerprofile .row {
+    display: block;
+  }
+  .dashboardcustomerprofile .row .col-1 {
+    width: 100%;     
+    
+  }
+  .dashboardcustomerprofile .row .col-2 {
+    width: 100%;   
+    
+  } 
+}
+/* dashhboardcustomerprofile css ends here*/
+
+/* admin css starts*/
+.admin {
+  
+  padding-bottom: 5em;
+  
+}
+.admin h2 {
+  padding-top: 2.5em;
+}
+
+
+.signupadmin h2, .signupcustomer h2 {
+  margin: 2em auto 1em auto;
+  padding-bottom: 2em;
+}
+.signupadmin form{
+  max-width: 80%;
+  height: auto;
+  background-color: rgba(238, 135, 97, .6);
+  
+}
+
+.signupadmin form label {
+  padding: .5em;
+  font-size: 1.25em;
+}
+.signupadmin form input {
+  background-color: transparent;
+  color: whitesmoke;
+  outline: none;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+  font-size: 1.25em;
+}
+/* admin css ends here*/
+
+
+/* getstarted css* starts*/
+
+.getstarted {
+  
+  padding: 1.5% 1.5% 5em 1.5%;
+  text-align: left;
+  margin: 1em auto 1em auto;
+}
+.getstarted h2 {
+  margin: 1em auto 1em auto;
+  padding-bottom: 2em;
+  text-align: center;
+}
+.getstarted form {
+  max-width: 80%;
+  height: auto;
+  
+}
+.getstarted form select {
+  background-color: transparent;
+  color: whitesmoke;
+  outline: none;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+
+}
+.getstarted form select optgroup {
+  background-color: transparent;
+  color: black;
+}
+.getstarted form select optgroup option {
+  background-color: transparent;
+  color: black;
+}
+.getstarted form label {
+  padding: .5em;
+  font-size: 1.25em;
+}
+.getstarted form input {    
+  background-color: transparent;
+  color: whitesmoke;
+  outline: none;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+  font-size: 1.25em;
+}
+.getstarted form textarea {
+  background-color: transparent;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+  max-width: 100%;
+  height: auto;
+  color: whitesmoke;
+  outline: none;
+}
+#home-page-content-label, #home-page-content-textarea, #about-content-label, #about-content-textarea, #services-content-label, #services-content-textarea, #why-us-content-label, #why-us-content-textarea, #social-media-content-label, #social-media-content-textarea, #policy-content-label, #policy-content-textarea, #terms-and-conditions-content-label, #terms-and-conditions-content-textarea, #copy-right-content-label, #copy-right-content-textarea, #photo-gallery-content-label, #photo-gallery-content-textarea, #photo-gallery-upload-content-label, #photo-gallery-upload-content-input, #templates-feature-content-label, #templates-feature-content-textarea, #menu-or-label, #templates-feature-upload-content-label, #templates-feature-upload-content-input, #menu-content-label, #menu-content-textarea, #menu-upload-content-label, #menu-upload-content-input, #payment-method-content-label, #payment-method-content-textarea {
+  display: none;
+}
+/*
+.home-page-content-form {
+display: none;
+}
+/*
+.home-page-content-display-block {
+  display: block;
+  }
+  */
+.logo-file-upload-label {
+  display: none;
+}
+.background-color-select-input {
+  display: none;
+}
+/*.background-image-selector-label {
+  display: none;
+}
+*/
+.background-image-select-label {
+  display: none;
+}
+/* getstarted css ends here*/
+
+/* decidebyfeatures css* starts*/
+.decidebyfeatures {
+  
+  padding-bottom: 5em;
+}
+
+/* decidebyfeatures css ends here*/
+/* each-button css starts*/
+.each-button {
+  width: 25%;
+  border: 3px solid whitesmoke;
+  border-radius: 10px;
+  outline: none;
+  padding: .8em;
+  background-color: transparent; 
+  color: whitesmoke;
+  margin: 1em auto 1em auto;
+  } 
+  .each-button:hover {
+    color: rgb(180, 175, 175);
+  }
+/* each-button css starts*/
+  @media screen and (min-width: 280px) and (max-width: 768px) {
+    .each-button {
+      width: 100%;
+      margin: 1em auto 1em auto;
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .each-button {
+      width: 50%;
+      margin: 1em auto 1em auto;
+    }
+  }
+    /* each-button css end*/
+
+    
+/* modal css starts*/
+
+
+/* sign in modal css starts here */
+
+.modal-parent-signin {
+  margin: 0 auto 0 auto;
+  padding: 0 10%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  display: none;
+  text-align: left;
+  z-index: 1;
+  
+}
+
+.modal-signin {
+position: absolute;
+top: 10%;
+/*margin-left: 10%;
+margin-right: 10%;*/
+margin: auto;
+padding: 2em;
+height: auto;
+overflow: auto;
+border: 5px solid whitesmoke;
+border-radius: 10px;
+background-color: rgba(238, 135, 97, .9); 
+
+color: whitesmoke; 
+position: relative;
+animation: 1s drop;
+display: block;
+z-index: 1;
+}
+
+@keyframes drop {
+0% {
+ top: -13em;
+}
+100% {
+ top: 10%;
+}
+}
+
+.X-signin {
+position: absolute;
+top: .5em;
+right: .7em;
+font-size: 2em;
+
+}
+.X-signin:hover {
+cursor: pointer;
+color: rgb(180, 175, 175);
+
+}
+
+.modal-parent-signin .modal-signin form label {
+ text-align: left;
+ font-size: 1.25em;
+}
+.modal-parent-signin .modal-signin form input {
+width: 100%;
+border: 3px solid whitesmoke;
+border-radius: 10px;
+outline: none;
+padding: .8em;
+background-color: rgba(238, 135, 97, .6); 
+color: whitesmoke;
+}
+/*
+.show-password-label {
+  
+  padding-right: 1em;
+}
+*/
+/*
+.show-password-input { 
+position: absolute;  
+right: -10%;
+padding-left: 0;
+margin-left: 0;
+  
+}
+*/
+.show-password {
+  display: flex;
+  justify-content: space-evenly;
+}
+.modal-parent-signin .modal-signin form button {
+width: 20%;
+border: 3px solid whitesmoke;
+border-radius: 10px;
+outline: none;
+padding: .8em;
+background-color: rgba(238, 135, 97, .6); 
+color: whitesmoke;
+margin-right: 1.25em;
+} 
+.modal-parent-signin .modal-signin form button:hover {
+  color: rgb(180, 175, 175);
+}
+.modal-anchor-tags {
+  display: flex;
+  justify-content: space-around;  
+}
+.modal-anchor-tags a {
+  text-decoration: none;
+  font-size: 1.25em;
+}
+
+
+@media screen and (min-width: 280px) and (max-width: 768px) {
+  .modal-parent-signin .modal-signin form button {
+    width: 100%;
+    margin: auto auto 1em auto;
+  }
+
+  .modal-anchor-tags {
+    display: block;
+    justify-content: none;  
+  }
+  .modal-anchor-tags a {
+    display: block;
+    text-decoration: none;
+    font-size: 1.25em;
+  }
+}
+/* sign in modal css ends here */
+
+/* sign up modal css starts here */
+
+.modal-parent-signup {
+  margin: 0 auto 0 auto;
+  padding: 0 10%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  display: none;
+  text-align: left;
+  z-index: 1;
+  
+}
+
+.modal-signup {
+position: absolute;
+top: 10%;
+/*margin-left: 10%;
+margin-right: 10%;*/
+margin: auto;
+padding: 2em;
+height: auto;
+overflow: auto;
+border: 5px solid whitesmoke;
+border-radius: 10px;
+background-color: rgba(238, 135, 97, .9); 
+color: whitesmoke; 
+position: relative;
+animation: 1s drop;
+display: block;
+z-index: 1;
+}
+
+@keyframes drop {
+0% {
+ top: -13em;
+}
+100% {
+ top: 10%;
+}
+}
+
+.X-signup {
+position: absolute;
+top: .5em;
+right: .7em;
+font-size: 2em;
+
+}
+.X-signup:hover {
+cursor: pointer;
+color: rgb(180, 175, 175);
+
+}
+
+.modal-parent-signup .modal-signup form label {
+ text-align: left;
+ font-size: 1.25em;
+}
+.modal-parent-signup .modal-signup form input {
+width: 100%;
+border: 3px solid whitesmoke;
+border-radius: 10px;
+outline: none;
+padding: .8em;
+background-color: rgba(238, 135, 97, .6); 
+color: whitesmoke;
+}
+
+.modal-parent-signup .modal-signup form button {
+width: 25%;
+border: 3px solid whitesmoke;
+border-radius: 10px;
+outline: none;
+padding: .8em;
+background-color: rgba(238, 135, 97, .6); 
+color: whitesmoke;
+margin-right: 1.25em;
+} 
+.modal-parent-signup .modal-signup form button:hover {
+  color: rgb(180, 175, 175);
+}
+.modal-anchor-tags {
+  display: flex;
+  justify-content: space-around;  
+}
+.modal-anchor-tags a {
+  text-decoration: none;
+  font-size: 1.25em;
+}
+
+
+@media screen and (min-width: 280px) and (max-width: 768px) {
+  .modal-parent-signup .modal-signup form button {
+    width: 100%;
+    margin: auto auto 1em auto;
+  }
+  
+  .modal-anchor-tags {
+    display: block;
+    justify-content: none;  
+  }
+  .modal-anchor-tags a {
+    display: block;
+    text-decoration: none;
+    font-size: 1.25em;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .modal-parent-signup .modal-signup form button {
+    width: 40%;
+    margin: auto 1em 1em auto;
+  }
+}
+/* sign up modal css ends here */
+
+/* Admin Staff sign up modal css starts here */
+
+.modal-parent-signup-admin {
+  margin: 0 auto 0 auto;
+  padding: 0 10%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  display: none;
+  text-align: left;
+  z-index: 1;
+  
+}
+
+.modal-signup-admin {
+position: absolute;
+top: 10%;
+/*margin-left: 10%;
+margin-right: 10%;*/
+margin: auto;
+padding: 2em;
+height: auto;
+overflow: auto;
+border: 5px solid whitesmoke;
+border-radius: 10px;
+background-color: rgba(238, 135, 97, .9); 
+color: whitesmoke; 
+position: relative;
+animation: 1s drop;
+display: block;
+z-index: 1;
+}
+
+@keyframes drop {
+0% {
+ top: -13em;
+}
+100% {
+ top: 10%;
+}
+}
+
+.X-signup-admin {
+position: absolute;
+top: .5em;
+right: .7em;
+font-size: 2em;
+
+}
+.X-signup-admin:hover {
+cursor: pointer;
+color: rgb(180, 175, 175);
+
+}
+
+.modal-parent-signup-admin .modal-signup-admin form label {
+ text-align: left;
+ font-size: 1.25em;
+}
+.modal-parent-signup-admin .modal-signup-admin form input {
+width: 100%;
+border: 3px solid whitesmoke;
+border-radius: 10px;
+outline: none;
+padding: .8em;
+background-color: rgba(238, 135, 97, .6); 
+color: whitesmoke;
+}
+
+.modal-parent-signup-admin .modal-signup-admin form button {
+width: 25%;
+border: 3px solid whitesmoke;
+border-radius: 10px;
+outline: none;
+padding: .8em;
+background-color: rgba(238, 135, 97, .6); 
+color: whitesmoke;
+margin-right: 1.25em;
+} 
+.modal-parent-signup-admin .modal-signup-admin form button:hover {
+  color: rgb(180, 175, 175);
+}
+.modal-anchor-tags {
+  display: flex;
+  justify-content: space-around;  
+}
+.modal-anchor-tags a {
+  text-decoration: none;
+  font-size: 1.25em;
+}
+
+
+@media screen and (min-width: 280px) and (max-width: 768px) {
+  .modal-parent-signup-admin .modal-signup-admin form button {
+    width: 100%;
+    margin: auto auto 1em auto;
+  }
+  
+  .modal-anchor-tags {
+    display: block;
+    justify-content: none;  
+  }
+  .modal-anchor-tags a {
+    display: block;
+    text-decoration: none;
+    font-size: 1.25em;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .modal-parent-signup-admin .modal-signup-admin form button {
+    width: 40%;
+    margin: auto 1em 1em auto;
+  }
+}
+/* Admin Staff sign up modal css ends here */
+
+
+/* Contact Us modal css starts here */
+
+.modal-parent-contact {
+  margin: 0 auto 0 auto;
+  padding: 0 10%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  display: none;
+  text-align: left;
+  z-index: 1;  
+}
+
+.modal-contact {
+position: absolute;
+top: 10%;
+/*margin-left: 10%;
+margin-right: 10%;*/
+margin: auto;
+padding: 2em;
+height: auto;
+overflow: auto;
+border: 5px solid whitesmoke;
+border-radius: 10px;
+background-color: rgba(238, 135, 97, .9); 
+color: whitesmoke; 
+position: relative;
+animation: 1s drop;
+display: block;
+z-index: 1;
+}
+
+@keyframes drop {
+0% {
+ top: -13em;
+}
+100% {
+ top: 10%;
+}
+}
+
+.X-contact {
+position: absolute;
+top: .5em;
+right: .7em;
+font-size: 2em;
+
+}
+.X-contact:hover {
+cursor: pointer;
+color: rgb(180, 175, 175);
+
+
+}
+.modal-parent-contact .modal-contact form {
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+.modal-parent-contact .modal-contact form label {
+ text-align: left;
+ font-size: 1.25em;
+}
+.modal-parent-contact .modal-contact form input {
+width: 100%;
+border: 3px solid whitesmoke;
+border-radius: 10px;
+outline: none;
+padding: .8em;
+background-color: rgba(238, 135, 97, .6); 
+color: whitesmoke;
+}
+
+.modal-parent-contact .modal-contact form textarea {
+  max-width: 100%;
+  border: 3px solid aliceblue;
+  border-radius: 10px;
+  outline: none;
+  padding: 1em;
+  background-color: transparent;
+  color: aliceblue;
+  overflow: auto;
+  }
+
+.modal-parent-contact .modal-contact form button {
+width: 25%;
+border: 3px solid whitesmoke;
+border-radius: 10px;
+outline: none;
+padding: .8em;
+background-color: rgba(238, 135, 97, .6); 
+color: whitesmoke;
+margin-right: 1.25em;
+} 
+.modal-parent-contact .modal-contact form button:hover {
+  color: rgb(180, 175, 175);
+}
+.modal-anchor-tags {
+  display: flex;
+  justify-content: space-around;  
+}
+.modal-anchor-tags a {
+  text-decoration: none;
+  font-size: 1.25em;
+}
+
+
+@media screen and (min-width: 280px) and (max-width: 768px) {
+  .modal-parent-contact .modal-contact form button {
+    width: 100%;
+    margin: auto auto 1em auto;
+  }
+
+  .modal-anchor-tags {
+    display: block;
+    justify-content: none;  
+  }
+  .modal-anchor-tags a {
+    display: block;
+    text-decoration: none;
+    font-size: 1.25em;
+  }
+}
+/* Contact Us modal css ends here */
+
+/* Post Freelance Job modal css starts here */
+
+.modal-parent-postfreelancejob {
+  margin: 0 auto 0 auto;
+  padding: 0 10%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  display: none;
+  text-align: left;
+  z-index: 1;  
+}
+
+.modal-postfreelancejob {
+position: absolute;
+top: 10%;
+/*margin-left: 10%;
+margin-right: 10%;*/
+margin: auto;
+padding: 2em;
+height: auto;
+overflow: auto;
+border: 5px solid whitesmoke;
+border-radius: 10px;
+background-color: rgba(238, 135, 97, .6); 
+color: whitesmoke; 
+position: relative;
+animation: 1s drop;
+display: block;
+z-index: 1;
+}
+
+@keyframes drop {
+0% {
+ top: -13em;
+}
+100% {
+ top: 10%;
+}
+}
+
+.X-postfreelancejob {
+position: absolute;
+top: .5em;
+right: .7em;
+font-size: 2em;
+
+}
+.X-postfreelancejob:hover {
+cursor: pointer;
+color: rgb(180, 175, 175);
+
+
+}
+
+.modal-parent-postfreelancejob .modal-postfreelancejob form label {
+ text-align: left;
+ font-size: 1.25em;
+}
+.modal-parent-postfreelancejob .modal-postfreelancejob form input {
+width: 100%;
+border: 3px solid whitesmoke;
+border-radius: 10px;
+outline: none;
+padding: .8em;
+background-color: rgba(238, 135, 97, .9); 
+color: whitesmoke;
+}
+
+.modal-parent-postfreelancejob .modal-postfreelancejob form textarea {
+  max-width: 100%;
+  border: 3px solid aliceblue;
+  border-radius: 10px;
+  outline: none;
+  padding: 1em;
+  background-color: transparent;
+  color: aliceblue;
+  overflow: auto;
+  }
+
+.modal-parent-postfreelancejob .modal-postfreelancejob form button {
+width: 25%;
+border: 3px solid whitesmoke;
+border-radius: 10px;
+outline: none;
+padding: .8em;
+background-color: rgba(238, 135, 97, .6); 
+color: whitesmoke;
+margin-right: 1.25em;
+} 
+.modal-parent-postfreelancejob .modal-postfreelancejob form button:hover {
+  color: rgb(180, 175, 175);
+}
+.modal-anchor-tags {
+  display: flex;
+  justify-content: space-around;  
+}
+.modal-anchor-tags a {
+  text-decoration: none;
+  font-size: 1.25em;
+}
+
+
+@media screen and (min-width: 280px) and (max-width: 768px) {
+  .modal-parent-postfreelancejob .modal-postfreelancejob form button {
+    width: 100%;
+    margin: auto auto 1em auto;
+  }
+
+  .modal-anchor-tags {
+    display: block;
+    justify-content: none;  
+  }
+  .modal-anchor-tags a {
+    display: block;
+    text-decoration: none;
+    font-size: 1.25em;
+  }
+}
+/* Post Freelance Job modal css ends here */
+
+/* Upload Profile Image modal css starts here */
+
+.modal-parent-upload-profile-image {
+  margin: 0 auto 0 auto;
+  padding: 0 10%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  display: none;
+  text-align: left;
+  z-index: 1;  
+}
+
+.modal-upload-profile-image {
+position: absolute;
+top: 10%;
+/*margin-left: 10%;
+margin-right: 10%;*/
+margin: auto;
+padding: 2em;
+height: auto;
+overflow: auto;
+border: 5px solid whitesmoke;
+border-radius: 10px;
+background-color: rgba(238, 135, 97, .6); 
+color: whitesmoke; 
+position: relative;
+animation: 1s drop;
+display: block;
+z-index: 1;
+}
+
+@keyframes drop {
+0% {
+ top: -13em;
+}
+100% {
+ top: 10%;
+}
+}
+
+.X-upload-profile-image {
+position: absolute;
+top: .5em;
+right: .7em;
+font-size: 2em;
+
+}
+.X-upload-profile-image:hover {
+cursor: pointer;
+color: rgb(180, 175, 175);
+
+
+}
+.modal-parent-upload-profile-image .modal-upload-profile-image form {
+  width: 100%;
+  height: auto;
+}
+.modal-parent-upload-profile-image .modal-upload-profile-image form label {
+ text-align: left;
+ font-size: 1.25em;
+}
+.modal-parent-upload-profile-image .modal-upload-profile-image form input {
+width: 100%;
+border: 3px solid whitesmoke;
+border-radius: 10px;
+outline: none;
+padding: .8em;
+background-color: rgba(238, 135, 97, .6); 
+color: whitesmoke;
+}
+
+.modal-parent-upload-profile-image .modal-upload-profile-image form textarea {
+  max-width: 100%;
+  border: 3px solid aliceblue;
+  border-radius: 10px;
+  outline: none;
+  padding: 1em;
+  background-color: transparent;
+  color: aliceblue;
+  overflow: auto;
+  }
+
+.modal-parent-upload-profile-image .modal-upload-profile-image form button {
+width: 25%;
+border: 3px solid whitesmoke;
+border-radius: 10px;
+outline: none;
+padding: .8em;
+background-color: rgba(238, 135, 97, .6); 
+color: whitesmoke;
+margin-right: 1.25em;
+} 
+.modal-parent-upload-profile-image .modal-upload-profile-image form button:hover {
+  color: rgb(180, 175, 175);
+}
+.modal-anchor-tags {
+  display: flex;
+  justify-content: space-around;  
+}
+.modal-anchor-tags a {
+  text-decoration: none;
+  font-size: 1.25em;
+}
+
+
+@media screen and (min-width: 280px) and (max-width: 768px) {
+  .modal-parent-upload-profile-image .modal-upload-profile-image form button {
+    width: 100%;
+    margin: auto auto 1em auto;
+  }
+
+  .modal-anchor-tags {
+    display: block;
+    justify-content: none;  
+  }
+  .modal-anchor-tags a {
+    display: block;
+    text-decoration: none;
+    font-size: 1.25em;
+  }
+}
+/* Upload Profile Image modal css ends here */
+
+/* Modal confirm before deleting strts here */
+  
+.modal-parent-confirmation-before-delete {
+  margin: 0 auto 0 auto;
+  padding: 0 10%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  display: none;
+  text-align: left;
+  z-index: 1;  
+}
+
+.modal-confirmation-before-delete {
+position: absolute;
+top: 10%;
+/*margin-left: 10%;
+margin-right: 10%;*/
+margin: auto;
+padding: 2em;
+height: auto;
+overflow: auto;
+border: 5px solid whitesmoke;
+border-radius: 10px;
+background-color: rgba(238, 135, 97, .9); 
+color: whitesmoke; 
+position: relative;
+animation: 1s drop;
+display: block;
+z-index: 1;
+}
+
+@keyframes drop {
+0% {
+ top: -13em;
+}
+100% {
+ top: 10%;
+}
+}
+
+.X-confirmation-before-delete {
+position: absolute;
+top: .5em;
+right: .7em;
+font-size: 2em;
+
+}
+.X-confirmation-before-delete:hover {
+cursor: pointer;
+color: rgb(180, 175, 175);
+
+
+}
+
+.modal-parent-confirmation-before-delete .modal-confirmation-before-delete a {
+  display: block;
+  text-decoration: none;
+  font-size: 1.25em;
+}
+
+@media screen and (min-width: 280px) and (max-width: 768px) {
+  .modal-parent-confirmation-before-delete .modal-confirmation-before-delete button {
+    width: 50%;
+    max-width: 100%;
+    margin: auto auto 1em auto;
+  }
+
+  .modal-anchor-tags {
+    display: block;
+    justify-content: none;  
+  }
+  .modal-parent-confirmation-before-delete .modal-confirmation-before-delete a {
+    display: block;
+    text-decoration: none;
+    font-size: 1.25em;
+  }
+}
+/* modal confirm before deleting css ends here */
+
+/* Chat Box modal css starts here */
+
+.modal-parent-chatbox {
+  margin: 0 auto 0 auto;
+  padding: 0 10%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  display: none;
+  text-align: left;
+  z-index: 1;  
+}
+
+.modal-chatbox {
+position: absolute;
+top: 10%;
+/*margin-left: 10%;
+margin-right: 10%;*/
+margin: auto;
+padding: 1em;
+height: auto;
+overflow: auto;
+border: 5px solid whitesmoke;
+border-radius: 10px;
+/*background-color: rgba(238, 135, 97, .6); */
+background-color: rgba(0, 0, 0, 0.5);
+color: whitesmoke; 
+position: relative;
+animation: 1s drop;
+display: block;
+z-index: 1;
+}
+
+@keyframes drop {
+0% {
+ top: -13em;
+}
+100% {
+ top: 10%;
+}
+}
+
+.X-chatbox {
+position: absolute;
+top: .5em;
+right: .7em;
+font-size: 2em;
+
+}
+.X-chatbox:hover {
+cursor: pointer;
+color: rgb(180, 175, 175);
+
+
+}
+.modal-parent-chatbox .modal-chatbox .row-1 {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding: 2%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+}
+
+.modal-parent-chatbox .modal-chatbox .row-1 .column-1 {
+  width: 40%;
+  height: auto;
+  margin: auto;
+  color: rgb(245, 168, 124);
+  text-align: left;
+}
+
+.modal-parent-chatbox .modal-chatbox .row-1 .column-2 {
+  width: 40%;
+  height: auto;
+  margin: auto;
+  color: rgb(235, 212, 8);
+  text-align: right;
+} 
+
+.chatbox-1 {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding: 2%;
+  color: whitesmoke;
+  border: .5px solid whitesmoke;
+  border-radius: 10px;
+  background-color: rgba(114, 110, 110, 0.5);
+}
+.chatbox-2 {
+  
+  width: 100%;
+  height: auto;
+  margin: 40% auto  auto auto;
+  padding: 2%;
+  color: whitesmoke;
+  border: .5px solid whitesmoke;
+  border-radius: 10px;
+  background-color: rgba(114, 110, 110, 0.5);
+  
+}
+
+
+.modal-parent-chatbox .modal-chatbox .row-2 {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding: 2%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal-parent-chatbox .modal-chatbox .row-2 .column-1 {
+  width: 20%;
+  height: auto;
+  margin: auto;
+  color: rgb(245, 168, 124);
+
+}
+.modal-parent-chatbox .modal-chatbox .row-2 .column-2 {
+  width: 80%;
+  height: auto;
+  margin: auto;
+  color: rgb(235, 212, 8);
+  text-align: left;    
+} 
+
+.modal-parent-chatbox .modal-chatbox .row-2 .column-2 form{
+  width: 100%;
+  display: flex;
+  margin: auto;
+}
+
+.modal-parent-chatbox .modal-chatbox form input {
+width: 80%;
+border: 1px solid whitesmoke;
+border-top-left-radius: 10px;
+border-bottom-left-radius: 10px;
+outline: none;
+padding: .3em;
+background-color: rgba(238, 135, 97, .6); 
+color: whitesmoke;
+}
+
+
+.modal-parent-chatbox .modal-chatbox form button {
+width: 20%;
+border: 1px solid whitesmoke;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+outline: none;
+padding: .8em;
+background-color: rgba(238, 135, 97, .6); 
+color: whitesmoke;
+margin-right: 1.25em;
+} 
+.modal-parent-chatbox .modal-chatbox form button:hover {
+  color: rgb(180, 175, 175);
+}
+.modal-anchor-tags {
+  display: flex;
+  justify-content: space-around;  
+}
+.modal-anchor-tags a {
+  text-decoration: none;
+  font-size: 1.25em;
+}
+
+
+@media screen and (min-width: 280px) and (max-width: 768px) {
+  .modal-parent-chatbox .modal-chatbox form button {
+    width: 100%;
+    margin: auto auto 1em auto;
+  }
+
+  .modal-anchor-tags {
+    display: block;
+    justify-content: none;  
+  }
+  .modal-anchor-tags a {
+    display: block;
+    text-decoration: none;
+    font-size: 1.25em;
+  }
+}
+/* Chat Box modal css ends here */
+/* modal css ends*/
+/* signup-verification signup customer .ejs css*/
+.signup-verification form {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  text-align: left;
+}
+.signup-verification form input {
+  width: 80%;
+  height: auto;
+  background-color: transparent;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+  outline: none;
+  padding: .5em;
+}
+.signup-verification form button {
+  background-color: transparent;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+  outline: none;
+  padding: .5em;
+}
+ 
+.forgot-password form input, .forgot-password form button {
+  background-color: transparent;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+}
+/* faq css*/
+.accordion {
+background-color: rgb(238, 135, 97);
+color: whitesmoke;
+cursor: pointer;
+padding: 1.2em;
+width: 100%;
+border: none;
+text-align: left;
+outline: none;
+font-size: 1.2em;
+transition: 0.4s;
+}
+
+.active, .accordion:hover {
+background-color: #379683; 
+}
+
+.panel {
+margin-bottom: 0;
+padding: 0 1.1em;
+display: none;
+background-color: rgb(211, 129, 99);
+overflow: hidden;
+}
+
+.settings table{
+width: 90%;
+height: auto;
+border: none;
+text-align: center;
+color: whitesmoke;
+font-size: 1.25em;
+}
+.settings table caption {  
+color: whitesmoke;
+font-size: 1.25em;
+}
+.settings table th {
+width: 25%;
+}
+.settings table td {
+width: 25%;
+}
+
+.settings table tr td {
+border: none;
+}
+
+.dashboardfreelancepage {
+width: 100%;
+max-width: 100%;
+height: auto;
+margin: 0;
+padding: 0;
+display: block;
+}
+.dashboardfreelancepage .freelance-page-note {
+padding: 1em;
+}
+.dashboardfreelancepage .row-1 {
+width: 100%;
+height: auto;  
+
+font-size: 1.5em;
+}
+
+.dashboardfreelancepage .row-2 {
+width: 100%;
+height: auto;
+margin: auto;
+display: block;  
+font-size: 1.5em;
+padding-top: 2em;
+
+}
+.dashboardfreelancepage .row-2 table{
+width: 95%;
+height: auto;
+margin: auto;  
+border: 2px solid whitesmoke;
+border-radius: 8px;
+table-layout: fixed;
+
+}
+
+.dashboardfreelancepage .row-2 table tr {
+width: 100%;
+height: auto;
+
+}
+.dashboardfreelancepage .row-2 table tr th {
+width: 25%;
+height: auto;
+padding-left: 1%;
+border: 1px solid whitesmoke;
+overflow: auto;
+}
+.dashboardfreelancepage .row-2 table tr td {
+width: 70%;
+height: auto;
+padding: auto;
+overflow: auto;
+
+}
+
+.request-payment-input {
+width: 90%;
+}
+.submit-comment {
+padding: .5em;
+}
+.advertisements {
+width: 100%;
+height: auto;
+margin: auto;
+}
+.row-advertisement {
+width: 100%;
+height: auto;
+
+
+
+}
+.row-advertisement .column {
+width: 100%;
+height: auto;
+margin: auto;
+display: block;
+padding-left: 7%;
+}
+.row-advertisement table {
+
+width: 100%;
+height: auto;
+margin: auto;
+border: 3px solid whitesmoke;
+table-layout: fixed;
+}
+.row-advertisement table tr th{
+padding: 1%;
+overflow: auto;
+}
+
+.row-advertisement table tr td{
+padding: 1%;
+overflow: auto;
+}
+
+.submit-button {
+width: 15%;
+height: auto;
+background-color: transparent;
+color: whitesmoke;
+border: 2px solid whitesmoke;
+border-radius: 5px;
+padding: 1em;
+}
+
+.dashboardinbox {
+width: 100%;
+height: auto;      
+font-size: 1.5em;
+padding-top: 2em;
+
+}
+.dashboardinbox .row-1 {
+width: 100%;
+height: auto;
+margin: 0 auto 0 auto;
+display: block;  
+font-size: 1.5em;
+padding-top: 2em;
+
+}
+.dashboardinbox .row-1 table{
+width: 98%;
+height: auto;
+margin: auto;  
+border: 2px solid whitesmoke;
+border-radius: 8px;
+table-layout: fixed;
+
+}
+
+.dashboardinbox .row-1 table tr {
+width: 100%;
+height: auto;
+
+}
+.dashboardinbox .row-1 table tr th {
+width: 40%;
+height: auto;
+padding-left: 1%;
+border: 1px solid whitesmoke;
+font-size: 1em;
+overflow: auto;
+}
+.dashboardinbox .row-1 table tr td {
+width: 60%;
+height: auto;
+padding: auto;
+font-size: 1em;
+overflow: auto;
+
+}
+
+.dashboardinbox .row-1 table tr td form {
+width: 100%;
+height: auto;
+float: left;
+}
+
+
+.dashboardinbox .row-1 table tr td form .submin-comment-button {
+width: 100%;
+height: auto;
+padding: .5em;
+overflow-x: scroll;
+}
+
+/* dashboardpurchased css here */
+.dashboardpurchased {
+width: 100%;
+height: auto;
+margin: 0;
+padding: 0;
+}
+
+.dashboardpurchased .purchased-items {
+width: 100%;
+/*max-width: 100%; */
+height: auto;
+
+margin-bottom: 3em;
+}
+
+.dashboardpurchased .purchased-items .purchased-row {
+width: 100%;
+height: auto;
+/*max-width: 100%; */
+overflow-x: auto;
+    
+}
+
+.dashboardpurchased .purchased-items .purchased-row table {
+width: 100%;    
+height: auto;
+/*max-width: 100%;   */ 
+margin: 1em auto 1em auto;     
+text-align: left;
+border-collapse: collapse;
+/*padding: 1%;*/
+/*padding-top: 2em;*/
+table-layout: fixed;
+
+}
+.dashboardpurchased .purchased-items .purchased-row table caption {
+width: 100%;
+height: auto;
+}
+.dashboardpurchased .purchased-items .purchased-row table tr {
+width: 100%;
+height: auto;
+
+}
+
+.dashboardpurchased .purchased-items .purchased-row table tr th {
+width: 33%;
+border: 2px solid whitesmoke; 
+padding: 1.5%;  
+text-align: center;  
+font-size: 1.2em;
+font-weight: bold; 
+
+text-overflow: clip;
+/*padding: 1%;*/
+/*overflow: auto;*/
+overflow: auto;
+
+}
+
+.dashboardpurchased .purchased-items .purchased-row table tr td {
+width: 33%;
+border: 2px solid whitesmoke; 
+overflow: auto;
+/*text-overflow: clip; */
+padding: 1%;
+/*overflow: auto;*/ 
+color: rgb(155, 155, 207);
+overflow: auto;
+}
+
+.dashboardpurchased .purchased-items .purchased-row table caption {
+width: 100%;
+height: auto;
+overflow: auto;
+/*display: flex;
+justify-content: space-around; */
 }
