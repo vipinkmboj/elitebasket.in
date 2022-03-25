@@ -1,29 +1,27 @@
 * {
   box-sizing: border-box;
   padding: 0;
-  margin: 0;
-  
+  margin: 0;  
 }
-
 
 body {    
   margin: 0;
   padding: 0;
   text-align: center;
   background-color: #5CDB95;
-  color: #05386B;
-  
+  color: #05386B;  
 }
+
 @media only screen and (min-width: 280px) {
   body {      
     font-size: 1.5em;
-    /*max-width: 480px;*/
+    
   }
 }
 @media only screen and (min-width: 480px) {
   body {      
     font-size: 2em;
-    /*max-width: 480px;*/
+    
   }
 }
 @media only screen and (min-width: 768px) {
@@ -49,25 +47,20 @@ body {
   }
 }
 
-.item {
-  /*border-bottom: 2px solid whitesmoke;
-  border-collapse: collapse;*/
+.item { 
   padding: .5em;
   margin: 0;
 }
 
 .item1 { 
   grid-area: header;
-  height: 5em; 
-  /*height: 60px;*/  
+  height: 5em;     
   position: fixed;
   top: 0;  
   width: 100%;  
   background-color: #8EE4AF;
-  color: #05386B;
- 
-  /*border-bottom: 3px solid whitesmoke;*/
-  
+  color: #05386B; 
+    
   z-index: 1;
 }
 /*
@@ -80,8 +73,7 @@ body {
 .item3 { 
   grid-area: main;  
   height: auto;  
-  margin: 2.5em auto auto auto;
-  
+  margin: 2.5em auto auto auto;  
   padding-top: 3.5em .5em .5em .5em;  
   
 }
@@ -105,19 +97,18 @@ body {
     'header header header header header header'
     'main main main main main main'
     'footer footer footer footer footer footer';
-  /*grid-gap: 10px;*/  
-   background-color: transparent;
+    /*grid-gap: 10px;*/  
+    background-color: transparent;
 }
 
 
 /* header css starts */
-.header {  
-   
-  
-  color: #05386B;
- 
+/*
+.header {    
+  color: #05386B; 
   /*background-color: rgba(238, 135, 97, .6);*/
-}
+  /*
+}*/
 .header .contact-nav {
   background-color: #8EE4AF;
   color: #05386B;
@@ -197,10 +188,12 @@ body {
 .account {
   position: relative;
 }
+
 .account ul {
   position: absolute;
   right: 0;
 }
+/*
 .cart {
   position: relative;
 }
@@ -210,6 +203,8 @@ body {
   right: 5px;
   color: blue;
   /*display: none;*/
+
+  /*
 }
 .cart-sidenav {    
   position: relative;
@@ -223,31 +218,47 @@ body {
   color: blue;
   font-size: .7em;
 }
+*/
 /*
 .cart[title] {
   background-color: rgba(238, 135, 97, .6);
   color: whitesmoke;
 }
 */
-@media only screen and (min-width: 280px) and (max-width: 480px) { 
+@media only screen and (min-width: 280px) and (max-width: 768px) { 
   .header .headernav ul {
     display: none;
   }
 }
 
-@media only screen and (min-width: 480px) and (max-width: 1024px) { 
+@media only screen and (min-width: 768px) and (max-width: 1024px) { 
   .header .headernav ul:not(:last-child) {
     display: none;
   }
-  
+   
+}
+@media only screen and (min-width: 480px) and (max-width: 1024px) { 
+    
   .header .headernav {
     display: flex; 
     position: absolute;
-    top: 1.6em;
+    top: 5.5em;
     right: 1.2em;
     font-size: 1.25em;
   }
 }
+
+@media only screen and (min-width: 1024px) { 
+    
+  .header .headernav {
+    display: flex; 
+    position: absolute;
+    top: 5.5em;
+    right: 2em;
+    font-size: 1.5em;
+  }
+}
+/*
 @media screen and (min-width: 480px) and (max-width: 768px)  {
   .header .headernav .cart {
     display: none;
@@ -289,12 +300,22 @@ body {
   color: #05386B;
   font-weight: bolder;
 }
-
-@media only screen and (min-width: 280px) and (max-width: 768px) { 
+@media only screen and (min-width: 280px) and (max-width: 480px) { 
   .item1 .brand-title {
     position: absolute;
-    top: .6em;
+    top: 4em;
     right: 3.5em;    
+    font-size: 25px;  
+    text-decoration: none;
+    color: #05386B;
+    font-weight: bolder;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 768px) { 
+  .item1 .brand-title {
+    position: absolute;
+    top: 5em;
+    right: 3em;    
     font-size: 25px;  
     text-decoration: none;
     color: #05386B;
@@ -305,8 +326,8 @@ body {
 @media only screen and (min-width: 768px) and (max-width: 1024px) { 
   .item1 .brand-title {
     position: absolute;
-    top: .6em;
-    left: 6em;
+    top: 5em;
+    left: 40%;
     font-size: 25px;  
     text-decoration: none;
     color: #05386B;
