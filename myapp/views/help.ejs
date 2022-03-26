@@ -1,0 +1,63 @@
+<%- include('header') %>
+
+<div class="item item3 main ">
+    <div class="container welcome getstarted faq" ><!--welcome css working in this-->
+        <h2>Help</h2> 
+        <button class="accordion">Q. How to Sign Up (Register)?</button>
+        <div class="panel">
+        <p>
+            Ans. 
+            <h3><a href="/signup" >Sign Up</a></h3>            
+        </p>
+        </div>
+        <button class="accordion">Q. How to Sign in (Log in)?</button>
+        <div class="panel">
+        <p>
+            Ans. 
+            <h3><a href="/signin">Sign in</a></h3>            
+        </p>
+        </div>
+        <button class="accordion">Q. How to Contact www.quickwebsite.net?</button>
+        <div class="panel">
+        <p>
+            Ans. 
+            <h3><a href="/contact">Contact Us</a></h3>            
+        </p>
+        </div>
+        
+        
+        
+        <button class="accordion">Q. Other helps</button>
+        <div class="panel">
+        <p>
+            Ans. Please feel free to ask us, to help you serve conveniently
+            <h3><a href="/contact">Click here</a></h3>            
+        </p>
+        </div>
+
+               
+    </div>
+</div>
+<script>
+    // accordin
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+<%- include('footer') %>
+
+
+
+

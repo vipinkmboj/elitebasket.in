@@ -1,0 +1,26 @@
+<%- include('header') %>
+
+<div class="item item3 main ">
+    <div class="container welcome admin" ><!--welcome css working in this-->
+        
+        <% if(msg != '') {%> 
+            <h1 style="color: whitesmoke"> <%= msg %> </h1>  
+        <% } %>
+        <h2>Admin Staff Only</h2>
+        
+        <button class="each-button" onclick="window.location.href='/signin'">Admin Staff Sign in</button> 
+        <br/>
+        <button class="each-button" onclick="window.location.href='/signup'">Admin Staff Sign up</button>   
+    </div>     
+
+
+
+
+    
+</div>
+
+<%- include('footer') %>
+
+
+
+

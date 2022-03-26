@@ -1,0 +1,54 @@
+<%- include('header') %>
+
+<div class="item item3 main ">
+    <div class="container welcome getstarted faq" ><!--welcome css working in this-->
+        <h2>FAQ</h2> 
+        <button class="accordion">Q. Can I get refund?</button>
+        <div class="panel">
+        <p>
+            Ans. No, Because your order has already been processed. 
+        </p>
+        </div>
+
+        <button class="accordion">Q. How many days do I have to wait for my order?</button>
+        <div class="panel">
+        <p>
+           Ans. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ab, voluptatibus dicta nulla magnam nisi ea unde sed eos ducimus autem facilis perferendis atque ipsum et cupiditate minus adipisci quidem!
+        </p>
+        </div>
+
+        <button class="accordion">Q. Can I get changes done in my order?</button>
+        <div class="panel">
+        <p>
+            Ans. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quos temporibus debitis a consequuntur accusantium odio. Veniam, ducimus incidunt, officiis, vel aliquid est doloremque ex quae sed minima neque itaque.
+        </p>
+        </div>
+
+
+
+       
+    </div>
+</div>
+<script>
+    // accordin
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+<%- include('footer') %>
+
+
+
+
