@@ -223,7 +223,7 @@ body {
 /*
 .cart[title] {
   background-color: rgba(238, 135, 97, .6);
-  color: whitesmoke;
+  color: #05386B;
 }
 */
 @media only screen and (min-width: 280px) and (max-width: 768px) { 
@@ -428,7 +428,7 @@ body {
   
 }
 .item1 .sidenav-parent .sidenav ul li ul li {
-  border: 1px solid whitesmoke;
+  border: 1px solid #05386B;
 }
 .item1 .sidenav-parent .sidenav ul li ul li a {
   font-size: 1.25em;
@@ -564,7 +564,7 @@ body {
   height: auto;
   padding-top: 6em;
   margin-top: auto;
-  border-bottom: 1px solid whitesmoke;
+  border-bottom: 2px solid #05386B;
   
 }
 .main .welcome h1, .main .welcome h2 {
@@ -741,7 +741,7 @@ to {opacity: 1}
 .main .welcome .slideshow-container h2 {
   margin: auto;
   text-align: center;
-  color: whitesmoke;
+  color: #05386B;
 }
 
 .main .welcome .slideshow-container .row {
@@ -762,7 +762,7 @@ to {opacity: 1}
 }
 .main .welcome .slideshow-container .row .column h3 {
   text-align: left;  
-  color: whitesmoke; 
+  color: #05386B; 
   padding: .5em .5em .5em 33%;
    
   
@@ -838,7 +838,7 @@ to {opacity: 1}
   height: auto;
   margin: 2em 0 2em 0;
   overflow: hidden;
-  border-bottom: 1px solid whitesmoke;
+  border-bottom: 2px solid #05386B;
 }
 .how-it-works h2 {
   margin: auto;
@@ -849,7 +849,7 @@ to {opacity: 1}
 }
 .how-it-works ol {
   
-  color: whitesmoke;
+  color: #05386B;
   text-align: left;
   
   margin: 3em;
@@ -866,7 +866,7 @@ to {opacity: 1}
   color: #05386B; 
   margin: auto auto 0 auto;
   text-align: center;
-  border-bottom: 1px solid whitesmoke;
+  border-bottom: 2px solid #05386B;
 }
 .about h2 {
   margin: auto;
@@ -888,7 +888,7 @@ to {opacity: 1}
   float: center;
   */
   text-align: center;
-  border: 1px solid whitesmoke;
+  border: 1px solid #05386B;
   border-left: none;
   border-right: none;
   margin: auto;
@@ -931,6 +931,9 @@ to {opacity: 1}
   text-decoration: none;
   font-size: 1.25em;
 }
+.categories h4 {
+  padding-bottom: 2em;
+}
 @media screen and (min-width: 280px) and (max-width: 480px) {
 
   .categories .row {
@@ -957,10 +960,10 @@ to {opacity: 1}
   width: 100%;
   height: auto;
   background-color: transparent;
-  color: whitesmoke; 
+  color: #05386B; 
   margin: auto auto 5em auto;
   text-align: center;
-  border-bottom: 1px solid whitesmoke;
+  border-bottom: 2px solid #05386B;
 }
 .whyus h2 {
   margin: auto;
@@ -1026,7 +1029,7 @@ to {opacity: 1}
   border-spacing: 0;
   width: 100%;
   height: auto;
-  border: 1px solid whitesmoke;
+  border: 2px solid #05386B;
   margin-top: 4em;   
 
 }
@@ -1036,7 +1039,7 @@ to {opacity: 1}
 .career table th, td {
   text-align: left;
   padding: 8px;
-  border: 2px solid whitesmoke;
+  border: 2px solid #05386B;
 }
 
 .career table tr:nth-child(even){background-color: rgba(238, 135, 97, .6)}
@@ -1124,7 +1127,7 @@ to {opacity: 1}
 
 .dashboardcart table tr th {
   width: 50%;
-  border: 2px solid whitesmoke; 
+  border: 2px solid #05386B; 
   padding: 1.5%;  
   text-align: center;  
   font-size: 1.2em;
@@ -1138,7 +1141,7 @@ to {opacity: 1}
 
 .dashboardcart table tr td {
   width: 50%;
-  border: 2px solid whitesmoke; 
+  border: 2px solid #05386B; 
   overflow: auto;
   /*text-overflow: clip; */
   padding: 1%;
@@ -1359,9 +1362,9 @@ table caption {
 }
 .signupadmin form input {
   background-color: transparent;
-  color: whitesmoke;
+  color: #05386B;
   outline: none;
-  border: 2px solid whitesmoke;
+  border: 2px solid #05386B;
   border-radius: 5px;
   font-size: 1.25em;
 }
@@ -1388,9 +1391,9 @@ table caption {
 }
 .getstarted form select {
   background-color: transparent;
-  color: whitesmoke;
+  color: #05386B;
   outline: none;
-  border: 2px solid whitesmoke;
+  border: 2px solid #05386B;
   border-radius: 5px;
 
 }
@@ -1408,19 +1411,19 @@ table caption {
 }
 .getstarted form input {    
   background-color: transparent;
-  color: whitesmoke;
+  color: #05386B;
   outline: none;
-  border: 2px solid whitesmoke;
+  border: 2px solid #05386B;
   border-radius: 5px;
   font-size: 1.25em;
 }
 .getstarted form textarea {
   background-color: transparent;
-  border: 2px solid whitesmoke;
+  border: 2px solid #05386B;
   border-radius: 5px;
   max-width: 100%;
   height: auto;
-  color: whitesmoke;
+  color: #05386B;
   outline: none;
 }
 #home-page-content-label, #home-page-content-textarea, #about-content-label, #about-content-textarea, #services-content-label, #services-content-textarea, #why-us-content-label, #why-us-content-textarea, #social-media-content-label, #social-media-content-textarea, #policy-content-label, #policy-content-textarea, #terms-and-conditions-content-label, #terms-and-conditions-content-textarea, #copy-right-content-label, #copy-right-content-textarea, #photo-gallery-content-label, #photo-gallery-content-textarea, #photo-gallery-upload-content-label, #photo-gallery-upload-content-input, #templates-feature-content-label, #templates-feature-content-textarea, #menu-or-label, #templates-feature-upload-content-label, #templates-feature-upload-content-input, #menu-content-label, #menu-content-textarea, #menu-upload-content-label, #menu-upload-content-input, #payment-method-content-label, #payment-method-content-textarea {
@@ -1561,7 +1564,7 @@ border-radius: 10px;
 outline: none;
 padding: .8em;
 background-color: #5CDB95; 
-color: whitesmoke;
+color: #05386B;
 }
 /*
 .show-password-label {
@@ -1695,7 +1698,7 @@ border-radius: 10px;
 outline: none;
 padding: .8em;
 background-color: #5CDB95; 
-color: whitesmoke;
+color: #05386B;
 }
 /*
 .show-password-label {
@@ -1784,10 +1787,10 @@ margin: auto;
 padding: 2em;
 height: auto;
 overflow: auto;
-border: 5px solid whitesmoke;
+border: 5px solid #05386B;
 border-radius: 10px;
 background-color: rgba(238, 135, 97, .9); 
-color: whitesmoke; 
+color: #05386B; 
 position: relative;
 animation: 1s drop;
 display: block;
@@ -1822,22 +1825,22 @@ color: rgb(180, 175, 175);
 }
 .modal-parent-signup .modal-signup form input {
 width: 100%;
-border: 3px solid whitesmoke;
+border: 3px solid #05386B;
 border-radius: 10px;
 outline: none;
 padding: .8em;
 background-color: rgba(238, 135, 97, .6); 
-color: whitesmoke;
+color: #05386B;
 }
 
 .modal-parent-signup .modal-signup form button {
 width: 25%;
-border: 3px solid whitesmoke;
+border: 3px solid #05386B;
 border-radius: 10px;
 outline: none;
 padding: .8em;
 background-color: rgba(238, 135, 97, .6); 
-color: whitesmoke;
+color: #05386B;
 margin-right: 1.25em;
 } 
 .modal-parent-signup .modal-signup form button:hover {
@@ -1904,10 +1907,10 @@ margin: auto;
 padding: 2em;
 height: auto;
 overflow: auto;
-border: 5px solid whitesmoke;
+border: 5px solid #05386B;
 border-radius: 10px;
 background-color: rgba(238, 135, 97, .9); 
-color: whitesmoke; 
+color: #05386B; 
 position: relative;
 animation: 1s drop;
 display: block;
@@ -1942,22 +1945,22 @@ color: rgb(180, 175, 175);
 }
 .modal-parent-signup-admin .modal-signup-admin form input {
 width: 100%;
-border: 3px solid whitesmoke;
+border: 3px solid #05386B;
 border-radius: 10px;
 outline: none;
 padding: .8em;
 background-color: rgba(238, 135, 97, .6); 
-color: whitesmoke;
+color: #05386B;
 }
 
 .modal-parent-signup-admin .modal-signup-admin form button {
 width: 25%;
-border: 3px solid whitesmoke;
+border: 3px solid #05386B;
 border-radius: 10px;
 outline: none;
 padding: .8em;
 background-color: rgba(238, 135, 97, .6); 
-color: whitesmoke;
+color: #05386B;
 margin-right: 1.25em;
 } 
 .modal-parent-signup-admin .modal-signup-admin form button:hover {
@@ -2091,10 +2094,10 @@ margin: auto;
 padding: 2em;
 height: auto;
 overflow: auto;
-border: 5px solid whitesmoke;
+border: 5px solid #05386B;
 border-radius: 10px;
 background-color: rgba(238, 135, 97, .9); 
-color: whitesmoke; 
+color: #05386B; 
 position: relative;
 animation: 1s drop;
 display: block;
@@ -2134,12 +2137,12 @@ color: rgb(180, 175, 175);
 }
 .modal-parent-contact .modal-contact form input {
 width: 100%;
-border: 3px solid whitesmoke;
+border: 3px solid #05386B;
 border-radius: 10px;
 outline: none;
 padding: .8em;
 background-color: rgba(238, 135, 97, .6); 
-color: whitesmoke;
+color: #05386B;
 }
 
 .modal-parent-contact .modal-contact form textarea {
@@ -2155,12 +2158,12 @@ color: whitesmoke;
 
 .modal-parent-contact .modal-contact form button {
 width: 25%;
-border: 3px solid whitesmoke;
+border: 3px solid #05386B;
 border-radius: 10px;
 outline: none;
 padding: .8em;
 background-color: rgba(238, 135, 97, .6); 
-color: whitesmoke;
+color: #05386B;
 margin-right: 1.25em;
 } 
 .modal-parent-contact .modal-contact form button:hover {
@@ -2219,10 +2222,10 @@ margin: auto;
 padding: 2em;
 height: auto;
 overflow: auto;
-border: 5px solid whitesmoke;
+border: 5px solid #05386B;
 border-radius: 10px;
 background-color: rgba(238, 135, 97, .6); 
-color: whitesmoke; 
+color: #05386B; 
 position: relative;
 animation: 1s drop;
 display: block;
@@ -2258,12 +2261,12 @@ color: rgb(180, 175, 175);
 }
 .modal-parent-postfreelancejob .modal-postfreelancejob form input {
 width: 100%;
-border: 3px solid whitesmoke;
+border: 3px solid #05386B;
 border-radius: 10px;
 outline: none;
 padding: .8em;
 background-color: rgba(238, 135, 97, .9); 
-color: whitesmoke;
+color: #05386B;
 }
 
 .modal-parent-postfreelancejob .modal-postfreelancejob form textarea {
@@ -2279,12 +2282,12 @@ color: whitesmoke;
 
 .modal-parent-postfreelancejob .modal-postfreelancejob form button {
 width: 25%;
-border: 3px solid whitesmoke;
+border: 3px solid #05386B;
 border-radius: 10px;
 outline: none;
 padding: .8em;
 background-color: rgba(238, 135, 97, .6); 
-color: whitesmoke;
+color: #05386B;
 margin-right: 1.25em;
 } 
 .modal-parent-postfreelancejob .modal-postfreelancejob form button:hover {
@@ -2343,10 +2346,10 @@ margin: auto;
 padding: 2em;
 height: auto;
 overflow: auto;
-border: 5px solid whitesmoke;
+border: 5px solid #05386B;
 border-radius: 10px;
 background-color: rgba(238, 135, 97, .6); 
-color: whitesmoke; 
+color: #05386B; 
 position: relative;
 animation: 1s drop;
 display: block;
@@ -2385,12 +2388,12 @@ color: rgb(180, 175, 175);
 }
 .modal-parent-upload-profile-image .modal-upload-profile-image form input {
 width: 100%;
-border: 3px solid whitesmoke;
+border: 3px solid #05386B;
 border-radius: 10px;
 outline: none;
 padding: .8em;
 background-color: rgba(238, 135, 97, .6); 
-color: whitesmoke;
+color: #05386B;
 }
 
 .modal-parent-upload-profile-image .modal-upload-profile-image form textarea {
@@ -2406,12 +2409,12 @@ color: whitesmoke;
 
 .modal-parent-upload-profile-image .modal-upload-profile-image form button {
 width: 25%;
-border: 3px solid whitesmoke;
+border: 3px solid #05386B;
 border-radius: 10px;
 outline: none;
 padding: .8em;
 background-color: rgba(238, 135, 97, .6); 
-color: whitesmoke;
+color: #05386B;
 margin-right: 1.25em;
 } 
 .modal-parent-upload-profile-image .modal-upload-profile-image form button:hover {
@@ -2470,10 +2473,10 @@ margin: auto;
 padding: 2em;
 height: auto;
 overflow: auto;
-border: 5px solid whitesmoke;
+border: 5px solid #05386B;
 border-radius: 10px;
 background-color: rgba(238, 135, 97, .9); 
-color: whitesmoke; 
+color: #05386B; 
 position: relative;
 animation: 1s drop;
 display: block;
@@ -2553,11 +2556,11 @@ margin: auto;
 padding: 1em;
 height: auto;
 overflow: auto;
-border: 5px solid whitesmoke;
+border: 5px solid #05386B;
 border-radius: 10px;
 /*background-color: rgba(238, 135, 97, .6); */
 background-color: rgba(0, 0, 0, 0.5);
-color: whitesmoke; 
+color: #05386B; 
 position: relative;
 animation: 1s drop;
 display: block;
@@ -2616,8 +2619,8 @@ color: rgb(180, 175, 175);
   height: auto;
   margin: auto;
   padding: 2%;
-  color: whitesmoke;
-  border: .5px solid whitesmoke;
+  color: #05386B;
+  border: .5px solid #05386B;
   border-radius: 10px;
   background-color: rgba(114, 110, 110, 0.5);
 }
@@ -2627,8 +2630,8 @@ color: rgb(180, 175, 175);
   height: auto;
   margin: 40% auto  auto auto;
   padding: 2%;
-  color: whitesmoke;
-  border: .5px solid whitesmoke;
+  color: #05386B;
+  border: .5px solid #05386B;
   border-radius: 10px;
   background-color: rgba(114, 110, 110, 0.5);
   
@@ -2666,25 +2669,25 @@ color: rgb(180, 175, 175);
 
 .modal-parent-chatbox .modal-chatbox form input {
 width: 80%;
-border: 1px solid whitesmoke;
+border: 1px solid #05386B;
 border-top-left-radius: 10px;
 border-bottom-left-radius: 10px;
 outline: none;
 padding: .3em;
 background-color: rgba(238, 135, 97, .6); 
-color: whitesmoke;
+color: #05386B;
 }
 
 
 .modal-parent-chatbox .modal-chatbox form button {
 width: 20%;
-border: 1px solid whitesmoke;
+border: 1px solid #05386B;
 border-top-right-radius: 10px;
 border-bottom-right-radius: 10px;
 outline: none;
 padding: .8em;
 background-color: rgba(238, 135, 97, .6); 
-color: whitesmoke;
+color: #05386B;
 margin-right: 1.25em;
 } 
 .modal-parent-chatbox .modal-chatbox form button:hover {
@@ -2729,14 +2732,14 @@ margin-right: 1.25em;
   width: 80%;
   height: auto;
   background-color: transparent;
-  border: 2px solid whitesmoke;
+  border: 2px solid #05386B;
   border-radius: 5px;
   outline: none;
   padding: .5em;
 }
 .signup-verification form button {
   background-color: transparent;
-  border: 2px solid whitesmoke;
+  border: 2px solid #05386B;
   border-radius: 5px;
   outline: none;
   padding: .5em;
@@ -2744,7 +2747,7 @@ margin-right: 1.25em;
  
 .forgot-password form input, .forgot-password form button {
   background-color: transparent;
-  border: 2px solid whitesmoke;
+  border: 2px solid #05386B;
   border-radius: 5px;
 }
 /* faq css*/
@@ -2782,11 +2785,11 @@ width: 90%;
 height: auto;
 border: none;
 text-align: center;
-color: whitesmoke;
+color: #05386B;
 font-size: 1.25em;
 }
 .settings table caption {  
-color: whitesmoke;
+color: #05386B;
 font-size: 1.25em;
 }
 .settings table th {
@@ -2831,7 +2834,7 @@ padding-top: 2em;
 width: 95%;
 height: auto;
 margin: auto;  
-border: 2px solid whitesmoke;
+border: 2px solid #05386B;
 border-radius: 8px;
 table-layout: fixed;
 
@@ -2846,7 +2849,7 @@ height: auto;
 width: 25%;
 height: auto;
 padding-left: 1%;
-border: 1px solid whitesmoke;
+border: 1px solid #05386B;
 overflow: auto;
 }
 .dashboardfreelancepage .row-2 table tr td {
@@ -2887,7 +2890,7 @@ padding-left: 7%;
 width: 100%;
 height: auto;
 margin: auto;
-border: 3px solid whitesmoke;
+border: 3px solid #05386B;
 table-layout: fixed;
 }
 .row-advertisement table tr th{
@@ -2904,8 +2907,8 @@ overflow: auto;
 width: 15%;
 height: auto;
 background-color: transparent;
-color: whitesmoke;
-border: 2px solid whitesmoke;
+color: #05386B;
+border: 2px solid #05386B;
 border-radius: 5px;
 padding: 1em;
 }
@@ -2930,7 +2933,7 @@ padding-top: 2em;
 width: 98%;
 height: auto;
 margin: auto;  
-border: 2px solid whitesmoke;
+border: 2px solid #05386B;
 border-radius: 8px;
 table-layout: fixed;
 
@@ -2945,7 +2948,7 @@ height: auto;
 width: 40%;
 height: auto;
 padding-left: 1%;
-border: 1px solid whitesmoke;
+border: 1px solid #05386B;
 font-size: 1em;
 overflow: auto;
 }
@@ -3020,7 +3023,7 @@ height: auto;
 
 .dashboardpurchased .purchased-items .purchased-row table tr th {
 width: 33%;
-border: 2px solid whitesmoke; 
+border: 2px solid #05386B; 
 padding: 1.5%;  
 text-align: center;  
 font-size: 1.2em;
@@ -3035,7 +3038,7 @@ overflow: auto;
 
 .dashboardpurchased .purchased-items .purchased-row table tr td {
 width: 33%;
-border: 2px solid whitesmoke; 
+border: 2px solid #05386B; 
 overflow: auto;
 /*text-overflow: clip; */
 padding: 1%;
