@@ -32,16 +32,16 @@ function closeSideNavforWindow(e) {
 }
 // javascript for opening and closing side nav when iconbar is clicked, ends
 
-//sign in modal javascript starts
-//open sign in modal
-var parentModalSignin = document.getElementsByClassName('modal-parent-signin')[0];
-var parentModalSignup = document.querySelector('.modal-parent-signup');
-var parentModalGiveYourDetails = document.querySelector('.modal-parent-giveyourdetails');
+//Admin Pass modal javascript starts
+//open Admin Pass modal
+var parentModalAdminPass = document.getElementsByClassName('modal-parent-admin-pass')[0];
+//var parentModalSignup = document.querySelector('.modal-parent-signup');
+//var parentModalGiveYourDetails = document.querySelector('.modal-parent-giveyourdetails');
     
-function openSignInModal() {
-    parentModalSignin.style.display = 'block';
-    parentModalSignup.style.display = 'none';
-    parentModalContact.style.display = 'none';
+function openAdminPassModal() {
+    parentModalAdminPass.style.display = 'block';
+    //parentModalSignup.style.display = 'none';
+    //parentModalContact.style.display = 'none';
 //closing sidenav when signin is clicked
     sidenavParent.style.width = '0';
     sideNav.style.width = '0';
@@ -54,23 +54,63 @@ function openSignInModal() {
 
 
 }
-// close sign in modal
-var closeButtonModalSignin = document.getElementsByClassName('X-signin')[0];
-closeButtonModalSignin.addEventListener('click', closeSigninModal);
-function closeSigninModal() {
-    var parentModalSignin = document.getElementsByClassName('modal-parent-signin')[0];
-    parentModalSignin.style.display = 'none'; 
+// close Admin Pass modal
+var closeButtonModalAdminPass = document.getElementsByClassName('X-admin-pass')[0];
+closeButtonModalAdminPass.addEventListener('click', closeAdminPassModal);
+function closeAdminPassModal() {
+    var parentModalAdminPass = document.getElementsByClassName('modal-parent-admin-pass')[0];
+    parentModalAdminPass.style.display = 'none'; 
 }
 //close modal when clicked anywhere outside
-var parentModalSignin = document.getElementsByClassName('modal-parent-signin')[0];
-parentModalSignin.addEventListener('click', closeSigninModalForWindow);
-function closeSigninModalForWindow(e) {
-    if(e.target.className == 'modal-parent-signin') {
-        parentModalSignin.style.display = 'none';
+var parentModalAdminPass = document.getElementsByClassName('modal-parent-admin-pass')[0];
+parentModalAdminPass.addEventListener('click', closeAdminPassModalForWindow);
+function closeAdminPassModalForWindow(e) {
+    if(e.target.className == 'modal-parent-admin-pass') {
+        parentModalAdminPass.style.display = 'none';
 
     }
 }
-//sign in modal javascript ends
+//Admin Pass modal javascript ends
+
+//Employee Pass modal javascript starts
+//open Admin Pass modal
+var parentModalEmployeePass = document.getElementsByClassName('modal-parent-employee-pass')[0];
+//var parentModalSignup = document.querySelector('.modal-parent-signup');
+//var parentModalGiveYourDetails = document.querySelector('.modal-parent-giveyourdetails');
+    
+function openEmployeePassModal() {
+    parentModalEmployeePass.style.display = 'block';
+    //parentModalSignup.style.display = 'none';
+    //parentModalContact.style.display = 'none';
+//closing sidenav when signin is clicked
+    sidenavParent.style.width = '0';
+    sideNav.style.width = '0';
+    iconBarButton.style.display = 'block';
+    //closing give details sign up modal when signin is clicked
+    //parentModalGiveYourDetails.style.display = 'none';
+//scroll to top
+    document.body.scrollTop = 0; //For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+
+}
+// close Admin Pass modal
+var closeButtonModalEmployeePass = document.getElementsByClassName('X-employee-pass')[0];
+closeButtonModalEmployeePass.addEventListener('click', closeEmployeePassModal);
+function closeEmployeePassModal() {
+    var parentModalEmployeePass = document.getElementsByClassName('modal-parent-employee-pass')[0];
+    parentModalEmployeePass.style.display = 'none'; 
+}
+//close modal when clicked anywhere outside
+var parentModalEmployeePass = document.getElementsByClassName('modal-parent-employee-pass')[0];
+parentModalEmployeePass.addEventListener('click', closeEmployeePassModalForWindow);
+function closeEmployeePassModalForWindow(e) {
+    if(e.target.className == 'modal-parent-employee-pass') {
+        parentModalEmployeePass.style.display = 'none';
+
+    }
+}
+//Employee Pass modal javascript ends
 
 //sign up modal javascript starts here
 //open sign up modal when sign up button is clicked

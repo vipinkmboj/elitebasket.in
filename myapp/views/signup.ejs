@@ -4,7 +4,33 @@
     <div class="container welcome templates" ><!--welcome css working in this-->
         <br/><br/><br/><br/>
         <h2>Sign up</h2>
+        <div class="form-class">
+            <form action="/signup" method="POST" role="form">
+                <label for="firstname">First Name</label><br/>
+                <input name="firstname" type="text" placeholder="Enter Your First Name..." required/><br/><br/>
+                <label for="lastname">Last Name</label><br/>
+                <input name="lastname" type="text" placeholder="Enter Your Last Name..." required/><br/><br/>
+                <label for="mobilenumber">Mobile Number</label><br/>
+                <input name="mobilenumber" type="tel" placeholder="Enter Your Mobile Number..." required/><br/><br/>
+                <label for="email">Email</label><br/>
+                <input name="email" type="email" placeholder="Enter Your Email id..." required/><br/><br/>
+                <label for="username">Create Username</label><br/>
+                <input name="username" type="username" placeholder="Create Username..." required/><br/><br/>
+                <label for="password">Create Password</label><br/>
+                <input name="password" type="password" placeholder="Create Password..." required/><br/><br/>
+                <label for="confirmpassword">Confirm Password</label><br/>
+                <input name="confirmpassword" type="password" placeholder="Confirm Password..." required/><br/><br/>
 
+                
+                
+                <div class="form-button">
+                  <button type="submit">Sign up</button>
+                  <br/>
+                  <button type="reset">Reset</button><br/><br/>
+                </div>
+                
+      </form> 
+        </div>
         
         
         

@@ -4,7 +4,22 @@
     <div class="container welcome templates" ><!--welcome css working in this-->
         <br/><br/><br/><br/>
         <h2>Sign in</h2>
-
+        <div class="form-class">
+            <form action="/signin" method="POST" role="form">
+                <label for="username">Username</label><br/>
+                <input name="username" type="username" placeholder="Create Username..." required/><br/><br/>
+                <label for="password">Password</label><br/>
+                <input name="password" type="password" placeholder="Create Password..." required/><br/><br/>
+                       
+                
+                <div class="form-button">
+                  <button type="submit">Sign in</button>
+                  <br/>
+                  <button type="reset">Reset</button><br/><br/>
+                </div>
+                
+      </form> 
+        </div>
         
         
         

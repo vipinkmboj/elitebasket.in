@@ -1,0 +1,37 @@
+<%- include('header') %>
+
+<div class="item item3 main ">
+    <div class="container welcome templates" ><!--welcome css working in this-->
+        <br/><br/><br/><br/>
+        <h2>Subscribe</h2>
+        <div class="form-class">
+            <form action="/subscribe" method="POST" role="form">  
+                <label for="fullname">Enter Full Name</label><br/>              
+                <input name="fullname" type="fullname" placeholder="Enter Full Name..." required/><br/><br/>
+                <label for="email">Enter Email</label><br/>
+                <input name="email" type="email" placeholder="Enter Email..." required/><br/><br/>
+                <label for="mobile">Enter Mobile</label><br/>
+                <input name="mobile" type="number" placeholder="Enter Mobile..." required/><br/><br/>
+                     
+                <div class="form-button">
+                  <button type="submit">Subscribe</button>
+                  <br/>
+                  <button type="reset">Reset</button><br/><br/>
+                </div>
+                
+      </form> 
+        </div>
+        
+        
+        
+        
+                        
+    </div>
+</div>
+
+
+<%- include('footer') %>
+
+
+
+

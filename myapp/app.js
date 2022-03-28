@@ -16,6 +16,7 @@ var faqRouter = require('./routes/faq');
 var helpRouter = require('./routes/help');
 var employeesRouter = require('./routes/employees');
 var adminRouter = require('./routes/admin');
+var subscribeRouter = require('./routes/subscribe');
 
 var app = express();
 
@@ -41,6 +42,7 @@ app.use('/faq', faqRouter);
 app.use('/help', helpRouter);
 app.use('/employees', employeesRouter);
 app.use('/admin', adminRouter);
+app.use('/subscribe', subscribeRouter);
 
 
 
