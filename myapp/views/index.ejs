@@ -9,9 +9,102 @@
               <% } %>
                <h1 style="margin-top: 2em;"><a href="#" style="color: #EDF5E1; padding-top: 5em;">Please Note: Web Site Under Construction! All Services will be available soon! Cheers :)</a></h1>
                
-              
-              
+               
+               <!--
+               <section>
+                <img class="mySlides fade" src="/images/pexels-tima-miroshnichenko-5717546.jpg" style="width:100%; height: 400px;">
+                <img class="mySlides fade" src="images/pexels-pixabay-38519.jpg" style="width:100%; height: 400px;">
+                <img class="mySlides fade" src="/images/pexels-tima-miroshnichenko-5717546.jpg" style="width:100%; height: 400px;">
 
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <div style="text-align:center">
+                  <span class="dot" onclick="currentSlide(1)"></span>
+                  <span class="dot" onclick="currentSlide(2)"></span>
+                  <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+              </section>
+-->
+               <!---->
+              <div class="slideshow-container1"><!--Slideshow-container1 starts-->
+
+                <div class="myslides1 fade1"><!--myslides1 starts-->
+                  <div class="numbertext1">1 / 3</div>
+                  <a href="/categories"><img src="/images/slideshow1.jpg" style="width:100%; height: 400px;" class="responsive" /></a>
+
+                  <div class="text1">                    
+                    <h1><a href="/categories" style="margin: 0; padding: 0;">Categories</a></h1>
+                  </div>
+                </div><!--myslides1 ends-->
+                
+                <div class="myslides1 fade1"><!--myslides1 starts-->
+                  <div class="numbertext1">2 / 3</div>
+                  <a href="/products"><img src="images/slideshow2.jpg" style="width:100%; height: 400px;" class="responsive" /></a>
+
+                  <div class="text1">                    
+                    <h1><a href="/products" style="margin: 0; padding: 0;">Products</a></h1>
+                  </div>
+                </div><!--myslides1 ends-->
+
+
+                <div class="myslides1 fade1"><!--myslides1 starts-->
+                  <div class="numbertext1">3 / 3</div>
+                  <a href="/contact"><img src="/images/slideshow3.jpg" style="width:100%; height: 400px;" class="responsive" /></a>
+
+                  <div class="text1">                    
+                    <h1><a href="/contact" style="margin: 0; padding: 0;">Contact</a></h1>
+                  </div>
+                </div><!--myslides1 ends-->
+
+
+                <a class="prev1" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next1" onclick="plusSlides(1)">&#10095;</a>
+                
+              </div><!--Slideshow-container1 ends-->
+       
+                <br>
+                
+                <div style="text-align:center">
+                  <span class="dot1" onclick="currentSlide(1)"></span> 
+                  <span class="dot1" onclick="currentSlide(2)"></span> 
+                  <span class="dot1" onclick="currentSlide(3)"></span> 
+                  
+
+                </div>
+
+                <script>
+                  var slideIndex = 1;
+          showSlides(slideIndex);
+
+          function plusSlides(n) {
+            showSlides(slideIndex += n);
+          }
+
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
+          }
+
+          function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("myslides1");
+            var dots = document.getElementsByClassName("dot1");
+            if (n > slides.length) {
+              slideIndex = 1
+            }
+            if (n < 1) {
+              slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active1", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active1";
+          }
+                          </script>
+                  <!--     
                <div class="slideshow-container">
 
                 <div class="mySlides fade">
@@ -101,7 +194,7 @@
                    
                   </div>
                 </div>
-
+             
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 
@@ -120,10 +213,10 @@
                   <span class="dot" onclick="currentSlide(9)"></span> 
 
                 </div>
-
-                
+ -->
+                <!--
                 <script>
-                  
+                  /*
                   var autoSlideIndex = 0;
                   autoShowSlides();
                   
@@ -171,8 +264,9 @@
                     dots[slideIndex-1].className += " active";
                     
                   }
+                  */
                   </script>
-                
+                -->
 
                <!---->
 
