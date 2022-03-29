@@ -1,9 +1,12 @@
 <%- include('header') %>
 
 <div class="item item3 main ">
-    <div class="container welcome templates" ><!--welcome css working in this-->
+    <div class="container welcome templates subscribe" ><!--welcome css working in this-->
         <br/><br/><br/><br/>
         <h2>Subscribe</h2>
+        <% if(msg != '') { %>
+            <h2 style="color: whitesmoke;"><%= msg %></h2>
+          <% } %>
         <div class="form-class">
             <form action="/subscribe" method="POST" role="form">  
                 <label for="fullname">Enter Full Name</label><br/>              
