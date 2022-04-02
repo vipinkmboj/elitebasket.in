@@ -17,6 +17,8 @@ var helpRouter = require('./routes/help');
 var employeesRouter = require('./routes/employees');
 var adminRouter = require('./routes/admin');
 var subscribeRouter = require('./routes/subscribe');
+var soilRouter = require('./routes/soil');
+var compostRouter = require('./routes/compost');
 
 var app = express();
 
@@ -43,6 +45,8 @@ app.use('/help', helpRouter);
 app.use('/employees', employeesRouter);
 app.use('/admin', adminRouter);
 app.use('/subscribe', subscribeRouter);
+app.use('/soil', soilRouter);
+app.use('/compost', compostRouter);
 
 
 

@@ -300,6 +300,12 @@ body {
   text-decoration: none;
   color: #05386B;
   font-weight: bolder;
+  box-shadow: 5px 5px 5px #379683;
+}
+.item1 .brand-title img {
+  border-radius: 8px;
+
+  z-index: 1;
 }
 @media only screen and (min-width: 280px) and (max-width: 480px) { 
   .item1 .brand-title {
@@ -1059,8 +1065,8 @@ to {opacity: 1}
   
 }
 .categories .row .column ul{
-  float: left;  
-  padding-left: 1.9em;
+  float: left; 
+  padding-left: 35%;
   text-align: left;
   font-size: 1.25em;
 }
