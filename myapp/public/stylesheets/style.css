@@ -371,6 +371,7 @@ body {
   padding-top: 4em;
   position: relative;
   
+  
 }
 .item1 .sidenav-parent .sidenav ul {
   display: block;
@@ -587,6 +588,7 @@ height: auto;
 position: relative;
 margin: auto;
 text-align: center;
+padding-top: 6em;
 }
 
 .myslides1 {
@@ -594,11 +596,14 @@ text-align: center;
 
   width: 100%;
   height: auto;
+  box-shadow: .5em .5em .5em #379683;
+  text-shadow: -1px 0 #379683, 0 1px #379683, 1px 0 #379683, 0 -1px #379683;
 }
 
 .myslides1 img {
   vertical-align: middle;
-z-index: 1;
+  border-radius: .5em;
+  z-index: 1;
 }
 /* Next & previous buttons */
 
@@ -1150,14 +1155,17 @@ to {opacity: 1}
 
 /* templates css* ends*/
 .class-img {
-  width: 100%;
+  width: 70%;
   /*max-width: 90%;*/
-  height: 550px;
+  height: 650px;
   margin: auto auto 1em auto;
   transition: opacity .2s;
+  border-radius: .7em;
+  z-index: 1;
+  box-shadow: .5em .5em .5em #379683;
 }
 .class-img:hover {
-  opacity: 0.85;
+  opacity: 0.75;
 }
 /* career css* starts*/
 .career {
@@ -1622,6 +1630,7 @@ display: none;
   background-color: transparent; 
   color: #05386B;
   margin: 1em auto 1em auto;
+  box-shadow: .3em .3em .3em #379683;
   } 
   .each-button:hover {
     color: #379683;
