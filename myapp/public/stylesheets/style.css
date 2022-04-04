@@ -1083,6 +1083,23 @@ to {opacity: 1}
     padding-top: 6em;
  
 }
+.categories figure {
+  margin-bottom: 2em;
+}
+.categories figure:hover {
+  cursor: pointer;
+}
+.categories figure figcaption a {
+  font-size: 2em;
+}
+.categories figure img {
+  border-radius: .5em;
+  
+}
+.categories figure hr {
+  border: 2px solid #05386B;
+  border-radius: 5px;
+}
 .categories .row {
   display: flex;
   width: 100%;
