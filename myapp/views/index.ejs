@@ -3,11 +3,11 @@
 <div class="item2"></div>
 
 <div class="item item3 main">
-    <div class="container welcome" > <!--welcome div--> 
+    <div class="container welcome" id="homecontent"> <!--welcome div--> 
               <% if(msg != '') {%> 
                 <h1 style="color: #EDF5E1"> <%= msg %> </h1>  
               <% } %>
-               <!--<h1 style="margin-top: 2em;"><a href="#" style="color: #EDF5E1; padding-top: 5em;">Please Note: Web Site Under Construction! All Services will be available soon! Cheers :)</a></h1>-->
+               <h4 style="margin-top: 5em;"><a href="#" style="color: red; padding-top: 5em;">Please Note: Web Site Under Construction! All Services will be available soon! Cheers :)</a></h4>
                
                
                <!--
@@ -26,11 +26,11 @@
               </section>
 -->
                <!---->
-              <div class="slideshow-container1" id="homecontent"><!--Slideshow-container1 starts-->
+              <div class="slideshow-container1" ><!--Slideshow-container1 starts-->
 
                 <div class="myslides1 fade1"><!--myslides1 starts-->
                   <div class="numbertext1">1 / 3</div>
-                  <a href="/categories"><img src="/images/slideshow1.jpg" style="width:100%; height: 400px;" class="responsive" /></a>
+                  <a href="/categories"><img src="/images/slideshow1.jpg" style="width:100%; height: 280px;" class="responsive" /></a>
 
                   <div class="text1">                    
                     <h1><a href="/categories" style="margin: 0; padding: 0;">Categories</a></h1>
@@ -39,7 +39,7 @@
                 
                 <div class="myslides1 fade1"><!--myslides1 starts-->
                   <div class="numbertext1">2 / 3</div>
-                  <a href="/products"><img src="images/slideshow2.jpg" style="width:100%; height: 400px;" class="responsive" /></a>
+                  <a href="/products"><img src="images/slideshow2.jpg" style="width:100%; height: 280px;" class="responsive" /></a>
 
                   <div class="text1">                    
                     <h1><a href="/products" style="margin: 0; padding: 0;">Products</a></h1>
@@ -49,7 +49,7 @@
 
                 <div class="myslides1 fade1"><!--myslides1 starts-->
                   <div class="numbertext1">3 / 3</div>
-                  <a href="/contact"><img src="/images/slideshow3.jpg" style="width:100%; height: 400px;" class="responsive" /></a>
+                  <a href="/contact"><img src="/images/slideshow3.jpg" style="width:100%; height: 280px;" class="responsive" /></a>
 
                   <div class="text1">                    
                     <h1><a href="/contact" style="margin: 0; padding: 0;">Contact</a></h1>
@@ -304,23 +304,38 @@
           </p>
           
       </div>
+
+      <div class="about" id="whyuscontent">
+        <h2>Why Us</h2>
+        <p>
+          Because, We are the best and we believe in quality. We are unique and our prices are effordable. Our service is fast, so you don't have to wait for ages.
+        </p>
+        
+    </div>
     
+      <div class="categories" id="categoriescontent">
+        <h2>Categories</h2>
+        <ul>
+          <li><a href="/soil">Soil</a></li>
+          <li><a href="/compost">Compost</a></li>
+        </ul>
+      </div>
         <!-- About Content ends here-->
 
         <!-- Services Content Stats here-->
+        <!--
      <div class="categories" id="categoriescontent">
           <h2>Categories</h2>
           
           <div class="row">
             <div class="column column-left">
-              <!--<h3 style="text-align: center;">Type 1</h3>-->
-              <ul>
+                      <ul>
                 <li><a href="/soil">Soil</a></li>
                  
               </ul>                
             </div>
             <div class="column column-right">
-                <!--<h3>Type 2</h3>-->
+                
                 <ul>
                   <li><a href="/compost">Compost</a></li>
                   
@@ -330,7 +345,8 @@
           
             <h4 style="text-align: center; margin: auto;">Didn't find the right product, you are looking for? <a href="/#productscontent">Search by Products</a></h4>
             
-        </div>                        
+        </div>  
+        -->                      
         <!-- Services Content ends here-->            
             
        

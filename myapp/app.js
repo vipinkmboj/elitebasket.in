@@ -19,6 +19,8 @@ var adminRouter = require('./routes/admin');
 var subscribeRouter = require('./routes/subscribe');
 var soilRouter = require('./routes/soil');
 var compostRouter = require('./routes/compost');
+var pottingsoilRouter = require('./routes/pottingsoil');
+var vermicompostRouter = require('./routes/vermicompost');
 
 var app = express();
 
@@ -47,6 +49,8 @@ app.use('/admin', adminRouter);
 app.use('/subscribe', subscribeRouter);
 app.use('/soil', soilRouter);
 app.use('/compost', compostRouter);
+app.use('/pottingsoil', pottingsoilRouter);
+app.use('/vermicompost', vermicompostRouter);
 
 
 
