@@ -112,6 +112,46 @@ function closeEmployeePassModalForWindow(e) {
 }
 //Employee Pass modal javascript ends
 
+//Product Detail modal javascript starts
+//open Admin Pass modal
+var parentModalProductDetail = document.getElementsByClassName('modal-parent-product-detail')[0];
+//var parentModalSignup = document.querySelector('.modal-parent-signup');
+//var parentModalGiveYourDetails = document.querySelector('.modal-parent-giveyourdetails');
+    
+function openProductDetailModal() {
+    parentModalProductDetail.style.display = 'block';
+    //parentModalSignup.style.display = 'none';
+    //parentModalContact.style.display = 'none';
+//closing sidenav when signin is clicked
+    sidenavParent.style.width = '0';
+    sideNav.style.width = '0';
+    iconBarButton.style.display = 'block';
+    //closing give details sign up modal when signin is clicked
+    //parentModalGiveYourDetails.style.display = 'none';
+//scroll to top
+    document.body.scrollTop = 0; //For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+
+}
+// close Admin Pass modal
+var closeButtonModalProductDetail = document.getElementsByClassName('X-product-detail')[0];
+closeButtonModalProductDetail.addEventListener('click', closeEmployeePassModal);
+function closeProductDetailModal() {
+    var parentModalProductDetail = document.getElementsByClassName('modal-parent-product-detail')[0];
+    parentModalProductDetail.style.display = 'none'; 
+}
+//close modal when clicked anywhere outside
+var parentModalProductDetail = document.getElementsByClassName('modal-parent-product-detail')[0];
+parentModalProductDetail.addEventListener('click', closeProductDetailModalForWindow);
+function closeProductDetailModalForWindow(e) {
+    if(e.target.className == 'modal-parent-product-detail') {
+        parentModalProductDetail.style.display = 'none';
+
+    }
+}
+//Product Detail modal javascript ends
+
 //sign up modal javascript starts here
 //open sign up modal when sign up button is clicked
 var parentModalSignup = document.querySelector('.modal-parent-signup');

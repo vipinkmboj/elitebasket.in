@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('signup', { title: 'Elite Basket', msg: '' });
+  res.render('signupadmin', { title: 'Elite Basket', msg: '' });
 });
 
 module.exports = router;

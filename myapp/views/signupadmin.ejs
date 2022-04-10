@@ -4,8 +4,11 @@
     <div class="container welcome templates" ><!--welcome css working in this-->
         <br/><br/><br/><br/>
         <h2>Sign up</h2>
+        <% if(msg != '') { %>
+          <h2 style="color: red;"><%= msg %></h2>
+        <% } %>
         <div class="form-class">
-            <form action="/signup" method="POST" role="form">
+            <form action="/signupadmin" method="POST" role="form">
                 <label for="firstname">First Name</label><br/>
                 <input name="firstname" type="text" placeholder="Enter Your First Name..." required/><br/><br/>
                 <label for="lastname">Last Name</label><br/>
