@@ -4,6 +4,9 @@
     <div class="container welcome templates" ><!--welcome css working in this-->
         <br/><br/><br/><br/>
         <h2>Sign in</h2>
+        <% if(msg != '') { %>
+          <h2><%= msg %></h2>
+        <% } %>
         <div class="form-class">
             <form action="/signin" method="POST" role="form">
                 <label for="username">Username</label><br/>
@@ -18,7 +21,12 @@
                   <button type="reset">Reset</button><br/><br/>
                 </div>
                 
-      </form> 
+            </form> 
+            <br/>
+            <div class="form-class-anchor">
+              <a href="/forgotusername">Forgot Username</a><a href="/forgotpassword">Forgot Password</a>
+
+            </div>
         </div>
         
         

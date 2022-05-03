@@ -18,7 +18,7 @@ router.post('/', function(req, res, next) {
       res.render('index', { title: 'Elite Basket', msg: 'Details not submitted, Try Again!' });
 
     }
-    res.render('subscribe', { title: 'Elite Basket', msg: 'Subscribed Successfully!' });
+    res.render('subscribe', { title: 'Elite Basket', msg: 'Subscribed Successfully! You will receive email notifications for our products and promotions' });
 
   });
   //res.render('subscribe', { title: 'Elite Basket', msg: '' });

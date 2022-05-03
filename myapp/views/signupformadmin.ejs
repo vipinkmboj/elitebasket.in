@@ -1,0 +1,50 @@
+<%- include('header') %>
+
+<div class="item item3 main ">
+    <div class="container welcome templates" ><!--welcome css working in this-->
+        <br/><br/><br/><br/>
+        <h2>Sign up</h2>
+        <% if(msg != '') { %>
+          <h2 style="color: red;"><%= msg %></h2>
+        <% } %>
+        <div class="form-class">
+          
+      <form action="/signupformadmin" method="post" role="form" enctype="multipart/form-data">
+        <label for="firstname">First Name</label><br/>
+        <input name="firstname" type="text" placeholder="Enter Your First Name..." /><br/><br/>
+        <label for="lastname">Last Name</label><br/>
+        <input name="lastname" type="text" placeholder="Enter Your Last Name..." /><br/><br/>
+        <label for="usrname">Username</label><br/>
+        <input name="usrname" type="username" placeholder="Create a Username..."  /><br/><br/>
+        <label for="mobilenumber">Mobile Number</label><br/>
+        <input name="mobilenumber" type="tel" placeholder="Enter Your Mobile Number..." /><br/><br/>
+        <label for="email">Email</label><br/>
+        <input name="email" type="email" placeholder="Enter Your Email id..." /><br/><br/>
+        <label for="nationalid">National Id</label><br/>
+        <input name="nationalid" type="nationalid" placeholder="Enter Your National id..." /><br/><br/>
+        <label for="nationalid">Upload National Id Image</label><br/>
+        <input name="nationalidimage" type="file" style="background-color: #FEFFFF;" /><br/><br/>         
+        <div class="form-button">
+          <button type="submit">Proceed to Sign up</button><button type="reset">Reset</button><br/><br/>
+        </div>
+        
+        <div class="modal-anchor-tags">
+          <a href="/signin">Sign in</a>
+        </div>
+        
+      </form>
+        </div>
+        
+        
+        
+        
+                        
+    </div>
+</div>
+
+
+<%- include('footer') %>
+
+
+
+

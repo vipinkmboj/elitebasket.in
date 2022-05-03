@@ -5,7 +5,7 @@
 <div class="item item3 main">
     <div class="container welcome" id="homecontent"> <!--welcome div--> 
               <% if(msg != '') {%> 
-                <h1 style="color: red"> <%= msg %> </h1>  
+                <h2 style="color: red; padding-top: 4em;"> <%= msg %> </h2>  
               <% } %>
                <h4 style="margin-top: 5em;"><a href="#" style="color: red; padding-top: 5em;">Please Note: Web Site Under Construction! All Services will be available soon! Cheers :)</a></h4>
                
@@ -315,26 +315,37 @@
     
       <div class="categories" id="categoriescontent">
         <h2>Categories</h2>
-        <ul>
-          <li>
-            <figure>
-              <figcaption>
-                <a  href="/soil">Soil</a>
-              </figcaption>
-              <img onclick="location.href='/soil'" src="images/soil.png" alt="Soil" style="width:90%; height: 320px;">
-              <hr/>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <figcaption><a  href="/compost">Compost</a></figcaption>
-              <img onclick="location.href='/compost'" src="images/compost.jpg" alt="Compost" style="width:90%; height: 320px">
-             
-              <hr/>
-            </figure>
-            
-          </li>
-        </ul>
+        <div class="row">
+          <div class="column col-1">
+            <ul>
+              <li>
+                <figure>
+                  <figcaption>
+                    <a  href="/soil">Soil</a>
+                  </figcaption>
+                  <img onclick="location.href='/soil'" src="images/soil.png" alt="Soil" style="width:90%; height: 320px;">
+                  <hr/>
+                </figure>
+              </li>
+            </ul>
+          </div>
+          <div class="column col-2">
+            <ul>          
+              <li>
+                <figure>
+                  <figcaption><a  href="/compost">Compost</a></figcaption>
+                  <img onclick="location.href='/compost'" src="images/compost.jpg" alt="Compost" style="width:90%; height: 320px">
+                 
+                  <hr/>
+                </figure>
+                
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        
       </div>
         <!-- About Content ends here-->
 

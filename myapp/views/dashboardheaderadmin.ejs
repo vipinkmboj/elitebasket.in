@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="E-Commerce Website">
+    <meta name="keywords" content="Online Purchase, Buy Online, Elite Basket, Elite Joint Venture, Cheapest, Online, Buy, Purchase, E-Commerce">
+    <meta name="author" content="E-Commerce">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!--Font Awesome for icons-->
+    <script src='https://kit.fontawesome.com/a076d05399.js' async></script>
+
+    <!--Google analytics code here-->
+   
+  </head>
+  <body ><!--oncontextmenu="return false"-->
+    <div class="grid-container">
+      <div class="item item1 header">
+        <div class="contact-nav" style="text-align: center;">
+            <a href="mailto: elitejointventure@gmail.com" style="font-size:1.5em"><i class="fa fa-envelope mail-icon" style="font-size:1.5em"></i>elitejointventure@gmail.com</a>
+        </div>
+        <span onclick="openNav()" class="iconbar" title="Menu">&#9776;</span><a href="/" class="brand-title"><img src="images/elitelogo.jpg" width="230px" height="80px"></a>
+        
+        <div class="headernav">
+          <ul>
+            <li>
+              <a href="/dashboardwebsiteadmin/#homecontent" id="home-icon" title="Home"><i class="glyphicon glyphicon-home"></i></a>
+            </li>
+            <li>
+              <a href="/dashboardwebsiteadmin/#aboutcontent">About</a>
+            </li>
+            <li>
+              <a href="/dashboardwebsiteadmin/#whyuscontent">Why Us</a>
+            </li>
+           
+            <li class="dropdown">
+                <a href="/dashboardwebsiteadmin/#categoriescontent">Categories</a>
+                <ul>
+                  <li><a href="/dashboardsoiladmin">Soil</a></li>
+                  <li><a href="/dashboardcompostadmin">Compost</a></li>                  
+                  
+                </ul>
+              </li> 
+              <li>
+                <a href="/dashboardproductsadmin">Products</a>
+               
+              </li> 
+            <li>
+              <a href="/dashboardcontactadmin">Contact</a>
+            </li>     
+            
+          </ul>
+          <ul>
+            <!--            <li class="cart">
+              <a href="/dashboardcartadmin" title="Cart"><i class="fa fa-shopping-cart"></i><span class="notification">2</span></a>
+
+            </li>
+            -->
+
+            <li class="account">
+              <a href="#" style="color: whitesmoke;" class="loggedinas">
+                <em style="color: rgb(71, 157, 255);">
+                  <% if(loginUser){ %>  
+                    <%= loginUser %> 
+                  <% } %>
+                  </em> 
+              </a>
+              <ul>                   
+                <li><a href="/dashboardadmin" >View Profile</a></li>
+                <li><a href="/dashboardeditaccountadmin">Edit Account</a></li>
+                <li><a href="#" onclick="openConfirmBeforeDeleteModal()">Delete Account</a></li>
+                <li><a href="/dashboardgivefeedbackadmin">Give Feedback</a></li>
+                <li>
+                    <form action="/signout" method="post" role="form">
+                      <button class="signoutBtn" type="submit"><i style="color: rgb(71, 157, 255);">Sign out</i></button>
+                    </form>              
+                </li>
+              </ul>              
+            </li>
+          </ul>
+          
+          
+        </div>
+
+      
+        
+
+      <div class="sidenav-parent">
+        <div class="sidenav">
+          <ul>
+            <li>
+              <a href="javascript:void(0)" class="closeBtn" title="Close">&times;</a>
+            </li>
+            <li>
+                <a href="/dashboardwebsiteadmin/#homecontent" onclick="closeSideNav()" title="Home"><i class="glyphicon glyphicon-home"></i></a>
+              </li>
+              <li>
+                <a href="/dashboardadmin" class="loggedinas">
+                                     
+                    <em style="color: rgb(71, 157, 255);">
+                      <% if(loginUser){ %>  
+                      <%= loginUser %> 
+                      <% } %>
+                    </em>   
+                </a>
+              </li> 
+              <!-- 
+              <li>  
+                <a href="/dashboardcartadmin">View Cart</a>              
+              </li>
+              -->
+              <li>  
+                <a href="#">Send Email</a>              
+              </li>
+              <!--
+              <li>  
+                <a href="#">Send Text</a>              
+              </li>
+              -->
+              <li>
+                <a href="/dashboardpurchasedadmin">Shopped</a>
+              </li>
+              <li>  
+                <a href="/dashboardinboxadmin">Inbox</a>              
+              </li>                       
+              <li>  
+                <a href="/dashboardoutboxadmin">Outbox</a>              
+              </li>
+              <li>  
+                <a href="/dashboardsentadmin">Sent</a>              
+              </li>
+              <!--
+              <li>  
+                <a href="/dashboarddraftadmin">Draft</a>              
+              </li>
+              <li>  
+                <a href="/dashboardspamadmin">Spam</a>              
+              </li> 
+              --> 
+              <li>  
+                <a href="/dashboardcustomersadmin">Customers</a>              
+              </li>
+              <li>  
+                <a href="/dashboardemployeesadmin">Employees</a>              
+              </li>
+              <li>  
+                <a href="/dashboardadminstaff">Admin Staff</a>              
+              </li>
+              <li>
+                <a href="/dashboardgetstartedadmin">Get Started</a>
+              </li>
+              <li>
+                <a href="/dashboardwebsiteadmin/#howitworkscontent">How It Works</a>
+              </li>           
+              <li>
+                <a href="/dashboardwebsiteadmin/#aboutcontent" onclick="closeSideNav()">About</a>
+              </li>
+              <li>
+                <a href="/dashboardwebsiteadmin/#servicescontent" onclick="closeSideNav()">Services</a>
+              </li>  
+              <li>
+                <a href="/dashboardwebsiteadmin/#whyuscontent">Why Us</a>
+              </li>
+              <li>
+                <a href="/dashboardtemplatesadmin" >Templates</a>
+                <!--
+                <ul>
+                  <li><a href="/foodandrestaurants">Food & Restaurants</a></li>
+                  <li><a href="/portfolio">Portfolio Templates</a></li>
+                  <li><a href="/smallbusiness">Small Business Website</a></li>                
+                  <li><a href="/blog">Blog Template</a></li>
+                  <li><a href="/vlog">Vlog Template</a></li>
+                  <li><a href="/marketing">Marketing Templates</a></li>
+                  <li><a href="/weddinginvitation">Wedding Invitation Template</a></li>
+                  <li><a href="/webpage">Web Page</a></li>
+                  <li><a href="/comingsoon">Coming Soon Template</a></li>
+                  <li><a href="/phototemplates">Photo Templates</a></li>
+                  <li><a href="/startpagetemplates">Start Page Templates</a></li>                                                    
+                  <li><a href="/othertemplates">Other Template</a></li>
+              </ul>
+              -->
+              </li> 
+                         
+              <li>
+                <a href="/dashboardcareeradmin">Career</a>
+              </li>
+              <li>
+                <a href="/dashboardemployeesadmin">Employees</a>
+              </li> 
+              <li>
+                <a href="/dashboardadmin">Admin Staff</a>
+              </li>
+              <li>
+                <a href="/dashboardfaqadmin">FAQ</a>
+              </li> 
+              <li>
+                <a href="/dashboardhelpadmin">Help</a>
+              </li>
+              <li>  
+                <a href="/dashboarduploadadmin">Upload</a>              
+              </li>  
+              <li>  
+                <a href="/dashboardsettingsadmin">Settings</a>              
+              </li>
+              <li>  
+                <a href="/dashboardrecyclebinadmin">Recyclebin</a>              
+              </li>  
+              <li>
+                <a href="/dashboardcontactadmin">Contact</a>
+              </li>  
+              <li>
+                <form action="/signout" method="post" role="form">
+                  <button class="signoutBtn" type="submit" style="color: rgb(71, 157, 255);"><em>Sign out</em></button>
+                </form>
+              </li>       
+              
+                    
+          </ul>                  
+        </div>
+
+      </div>
+      
+
+      </div>
+      <!--
+      <script>
+        var password;
+require('dotenv').config();
+let adminPass = process.env.PASS;
+function checkAdminPass() {
+    password = prompt('Please Enter your Admin Pass', '');
+    if(password == adminPass && password != '') {
+      alert('Password Correct! Click OK to enter!');
+    } else {
+        window.location = '/';
+    }
+}
+      </script>
+-->
