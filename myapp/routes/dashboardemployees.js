@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
     if(loginUserEmployee) {
       res.redirect('/dashboardemployees');
     }else {
-      res.render('employees', { title: 'Quick Website', msg:''});
+      res.render('employees', { title: 'Elite Basket', msg:''});
     }
   
 });
@@ -34,7 +34,7 @@ router.get('/',  function(req, res, next) {
     //res.render('dashboardemployees', { title: 'Front End Web Developer', msg:'', loginUser: loginUser.loginUserEmployee });
   } else if(loginUser.loginUserEmployee) {
     
-      res.render('dashboardemployees', { title: 'Quick Website', loginUser: loginUser.loginUserEmployee, msg: ''});
+      res.render('dashboardemployees', { title: 'Elite Basket', loginUser: loginUser.loginUserEmployee, msg: ''});
       
        
    // res.render('dashboardtadmin', { title: 'Front End Web Developer', msg:'', loginUser: loginUser.loginUserAdmin});

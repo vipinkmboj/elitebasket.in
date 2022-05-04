@@ -1,0 +1,56 @@
+<%- include('dashboardheaderadmin') %>
+
+<div class="item item3 main ">
+    <div class="container welcome admin" ><!--welcome css working in this-->
+       
+        
+        <h2>Dashboard Admin</h2>
+        <h4>
+            
+                    <strong>Logged in As: </strong>
+                    <a href="#" style="color: whitesmoke;" class="loggedinas">
+                        
+                        <em style="color: rgb(71, 157, 255);">
+                          <% if(loginUser){ %>  
+                            <%= loginUser %> 
+                          <% } %>
+                          </em> 
+                    </a>                     
+                              
+               
+                    <form action="/signout" method="post" role="form">
+                      <button class="signoutBtn" type="submit"><i style="color: rgb(71, 157, 255);">Sign out</i></button>
+                    </form>              
+               
+        
+        </h4>
+        <% if(msg != '') {%> 
+            <h1 style="color: #17252A"> <%= msg %> </h1>  
+        <% } %>
+        <h3>Edit Category</h3>
+        <div class="form-class">
+            <form action="/editcategory" method="post" role="form" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<%= existingCategoryData._id %>" />
+                <label>Category Name</label><br/>
+                <input name="categoryname" type="text" value="<%= existingCategoryData.CategoryName %>"/><br/>
+                
+                <label>Category Image</label><br/>
+                <input style="background-color: #DEF2F1;" name="categoryimage" type="file" value="<%= existingCategoryData.CategoryImageName %>" /><br/>
+
+                <br/>
+                <div class="form-button">
+                    <button type="submit">Edit Category</button>
+                    <br/>
+                    <button type="reset">Reset</button><br/><br/>
+                  </div>
+            </form>
+        </div>
+          
+    </div> 
+</div>
+
+<%- include('dashboardfooteradmin') %>
+
+
+
+

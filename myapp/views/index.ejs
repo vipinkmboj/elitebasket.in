@@ -313,40 +313,44 @@
         
     </div>
     
-      <div class="categories" id="categoriescontent">
-        <h2>Categories</h2>
-        <div class="row">
-          <div class="column col-1">
-            <ul>
-              <li>
-                <figure>
-                  <figcaption>
-                    <a  href="/soil">Soil</a>
-                  </figcaption>
-                  <img onclick="location.href='/soil'" src="images/soil.png" alt="Soil" style="width:90%; height: 320px;">
-                  <hr/>
-                </figure>
-              </li>
-            </ul>
-          </div>
-          <div class="column col-2">
-            <ul>          
-              <li>
-                <figure>
-                  <figcaption><a  href="/compost">Compost</a></figcaption>
-                  <img onclick="location.href='/compost'" src="images/compost.jpg" alt="Compost" style="width:90%; height: 320px">
-                 
-                  <hr/>
-                </figure>
+    <div class="categories" id="categoriescontent">
+      <h2>All Categories</h2>
+      <div class="row">                
+          
+          <% if(allCategoriesData.length > 0) { %>
+              <% allCategoriesData.forEach(function(item) { %>
+
+        <div class="column col-1">
+          <ul>
+            <li>
+              <figure>
+                <figcaption>
+                  <a href="/soil"><strong><%= item.CategoryName %></strong></a>
+                  
+                </figcaption>
                 
-              </li>
-            </ul>
-          </div>
+                <img onclick="location.href='/<%= item.CategoryName %>'" src="./uploads/<%= item.CategoryImageName %>" alt="Soil" style="width:90%; height: 320px;">
+                <figcaption>
+                  <a href="#" style="font-size: 1.25em;"><strong>Id: <%= item._id %></strong></a>
+                </figcaption>
+                
+                <hr/>
+              </figure>
+            </li>
+          </ul>
         </div>
-
-
-        
+        <% }) %>
       </div>
+
+
+      
+    </div>
+
+    
+              
+<% } else { %>
+  <h3 style="text-align: center;"><%= 'No Category Available' %></h3>
+<% } %>
         <!-- About Content ends here-->
 
         <!-- Services Content Stats here-->

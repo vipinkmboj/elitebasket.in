@@ -24,7 +24,7 @@ router.get('/',  function(req, res, next) {
     } else if(loginUserAdmin) {
       res.redirect('/dashboardadmin');
     } else {
-      res.render('signupadmin', { title: 'Quick Website', msg:'', adminDetails: ''});
+      res.render('signupadmin', { title: 'Elite Basket', msg:'', adminDetails: ''});
     } 
   });
 
@@ -59,13 +59,13 @@ router.post('/', function(req, res, next) {
         <h3>Hi, You have successfully Registered to your account</h3>
         <p>
           Welcome ${updatedAdminDetails.Firstname} <br/>
-          You have successfully registered for Quick Website with <br/>
+          You have successfully registered for Elite Basket with <br/>
   
           Username: ${updatedAdminDetails.Username}, <br/>
   
           <br/><br/>
           Regards,<br/>
-          Team (Quick Website)
+          Team (Elite Basket)
           
                 
         </p>   

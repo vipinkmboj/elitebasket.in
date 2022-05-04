@@ -113,7 +113,7 @@ function closeEmployeePassModalForWindow(e) {
 //Employee Pass modal javascript ends
 
 //Product Detail modal javascript starts
-//open Admin Pass modal
+
 var parentModalProductDetail = document.getElementsByClassName('modal-parent-product-detail')[0];
 //var parentModalSignup = document.querySelector('.modal-parent-signup');
 //var parentModalGiveYourDetails = document.querySelector('.modal-parent-giveyourdetails');

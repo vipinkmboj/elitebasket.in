@@ -5,20 +5,50 @@
         <br/><br/><br/><br/>
         <h2>All Categories</h2>
 
-        <div  id="fooandrestaurants">          
-            <h3>Soil</h3>            
-            <a href="#"><img class="class-img" src="images/soil.png" width="90%" height="90%"/></a><br/>                     
-            <button class="each-button">View Details</button><br/> 
-            <!--<button class="each-button"></button>   -->
-        </div>
+        <% if(msg != '') { %>
+            <h2><%= msg %></h2>
+        <% } %>
+        
 
-        <hr/>
+        <div class="categories" id="categoriescontent">
+            
+            <div class="row">                
+                
+                <% if(allCategoriesData.length > 0) { %>
+                    <% allCategoriesData.forEach(function(item) { %>
+    
+              <div class="column col-1">
+                <ul>
+                  <li>
+                    <figure>
+                      <figcaption>
+                        <a href="/soil"><strong><%= item.CategoryName %></strong></a>
+                        
+                      </figcaption>
+                      
+                      <img onclick="location.href='/<%= item.CategoryName %>'" src="./uploads/<%= item.CategoryImageName %>" alt="Soil" style="width:90%; height: 320px;">
+                      <figcaption>
+                        <a href="#" style="font-size: 1.25em;"><strong>Id: <%= item._id %></strong></a>
+                      </figcaption>
+                      
+                      <hr/>
+                    </figure>
+                  </li>
+                </ul>
+              </div>
+              <% }) %>
+            </div>
+    
+    
+            
+          </div>
 
-        <div >          
-            <h3 >Compost</h3>            
-            <a href="#"><img class="class-img" src="images/compost.jpg" width="90%" height="90%"/></a><br/>
-            <button class="each-button">View Details</button><br/>
-        </div>        
+          
+                    
+    <% } else { %>
+        <h3 style="text-align: center;"><%= 'No Category Available' %></h3>
+    <% } %>
+    
         
         
                         

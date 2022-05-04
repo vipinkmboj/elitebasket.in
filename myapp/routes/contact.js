@@ -6,10 +6,25 @@ var contactModel = require('../models/contactschema');
 
 //var contactModel = require('../models/contactschema');
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('contact', { title: 'Elite Basket', msg: '' });
-});
 
+router.get('/', function(req, res, next) {
+  var loginUser = {
+    loginUserCustomer: req.session.customerLoginUserName,//localStorage.getItem('customerLoginUserName'),
+    loginUserEmployee: req.session.employeeLoginUserName,//localStorage.getItem('employeeLoginUserName'),
+    loginUserAdmin: req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName')
+
+  };
+  if(loginUser.loginUserCustomer) {
+    res.redirect('dashboardcustomer');
+  } else if(loginUser.loginUserEmployee) {
+    res.redirect('dashboardemployees');
+  } else if(loginUser.loginUserAdmin) {
+    res.redirect('dashboardadmin');
+  } else {
+    res.render('contact', { title: 'Elite Basket', msg: '' });
+  }
+  
+});
 //contact
 
 router.post('/', function(req, res, next) {

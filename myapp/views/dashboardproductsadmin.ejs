@@ -1,0 +1,106 @@
+<%- include('dashboardheaderadmin') %>
+
+<div class="item item3 main ">
+    <div class="container welcome templates" ><!--welcome css working in this-->
+        <br/><br/><br/><br/>
+        <h2>All Products</h2>
+
+        <% if(msg != '') { %>
+            <h2><%= msg %></h2>
+        <% } %>
+       
+        <div class="categories" id="categoriescontent">
+            <h5><a href="dashboardadmin/#addnewproduct">Add New Product</a></h5>
+            <div class="row">
+                
+                
+                <% if(allProductsData.length > 0) { %>
+                    <% allProductsData.forEach(function(item) { %>
+    
+              <div class="column col-1">
+                <ul>
+                  <li>
+                    <figure>
+                      <figcaption>
+                        <a href="/soil"><strong><%= item.ProductName %></strong></a>
+                        
+                      </figcaption>
+                      
+                      <img onclick="location.href='/soil'" src="./uploads/<%= item.ProductImageName %>" alt="Soil" style="width:90%; height: 320px;">
+                      <figcaption>
+                        <a href="#" style="font-size: 1.25em;"><strong>Id: <%= item._id %></strong></a>
+                      </figcaption>
+                      <figcaption style="display: flex; justify-content: space-around;">
+                        
+                        <a href="/editproduct/<%= item._id %>" style="font-size: 1.25em;">Edit</a><a style="font-size: 1.25em;" href="#" onclick="openProductDetailModal()">View Detail</a><a href="/deleteproduct/<%= item._id %>" style="font-size: 1.25em;">Delete</a>
+                      </figcaption>
+                      <hr/>
+                    </figure>
+                  </li>
+                </ul>
+              </div>
+         
+              <% }) %>
+            </div>           
+          </div>
+
+    
+                    
+    <% } else { %>
+        <h3 style="text-align: center;"><%= 'No Category Available' %></h3>
+    <% } %>
+         
+       
+            
+    
+                        
+    </div>
+</div>
+
+<script>
+    //Product Detail modal javascript starts
+
+var parentModalProductDetail = document.getElementsByClassName('modal-parent-product-detail')[0];
+//var parentModalSignup = document.querySelector('.modal-parent-signup');
+//var parentModalGiveYourDetails = document.querySelector('.modal-parent-giveyourdetails');
+    
+function openProductDetailModal() {
+    parentModalProductDetail.style.display = 'block';
+    //parentModalSignup.style.display = 'none';
+    //parentModalContact.style.display = 'none';
+//closing sidenav when signin is clicked
+    sidenavParent.style.width = '0';
+    sideNav.style.width = '0';
+    iconBarButton.style.display = 'block';
+    //closing give details sign up modal when signin is clicked
+    //parentModalGiveYourDetails.style.display = 'none';
+//scroll to top
+    document.body.scrollTop = 0; //For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+
+}
+// close Admin Pass modal
+var closeButtonModalProductDetail = document.getElementsByClassName('X-product-detail')[0];
+closeButtonModalProductDetail.addEventListener('click', closeEmployeePassModal);
+function closeProductDetailModal() {
+    var parentModalProductDetail = document.getElementsByClassName('modal-parent-product-detail')[0];
+    parentModalProductDetail.style.display = 'none'; 
+}
+//close modal when clicked anywhere outside
+var parentModalProductDetail = document.getElementsByClassName('modal-parent-product-detail')[0];
+parentModalProductDetail.addEventListener('click', closeProductDetailModalForWindow);
+function closeProductDetailModalForWindow(e) {
+    if(e.target.className == 'modal-parent-product-detail') {
+        parentModalProductDetail.style.display = 'none';
+
+    }
+}
+//Product Detail modal javascript ends
+
+</script>
+<%- include('dashboardfooteradmin') %>
+
+
+
+

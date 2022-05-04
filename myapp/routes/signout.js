@@ -14,7 +14,7 @@ router.get('/',  function(req, res, next) {
   } else if(loginUserAdmin) {
     res.redirect('/dashboardadmin');
   } else {
-    res.render('signout', { title: 'Quick Website', msg:''});
+    res.render('signout', { title: 'Elite Basket', msg:''});
   }  
 });
 
@@ -24,7 +24,7 @@ router.post("/", function(req, res, next) {
     if(err) {
       res.redirect('/');
     } else {
-      res.render('signout', { title: 'Quick Website', msg:'' });
+      res.render('signout', { title: 'Elite Basket', msg:'' });
 
     }    
   })

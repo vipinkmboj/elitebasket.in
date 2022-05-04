@@ -4,7 +4,22 @@ var router = express.Router();
 var subscribeModel = require('../models/subscribeschema');
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('subscribe', { title: 'Elite Basket', msg: '' });
+  var loginUser = {
+    loginUserCustomer: req.session.customerLoginUserName,//localStorage.getItem('customerLoginUserName'),
+    loginUserEmployee: req.session.employeeLoginUserName,//localStorage.getItem('employeeLoginUserName'),
+    loginUserAdmin: req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName')
+
+  };
+  if(loginUser.loginUserCustomer) {
+    res.redirect('dashboardcustomer');
+  } else if(loginUser.loginUserEmployee) {
+    res.redirect('dashboardemployees');
+  } else if(loginUser.loginUserAdmin) {
+    res.redirect('dashboardadmin');
+  } else {
+    res.render('subscribe', { title: 'Elite Basket', msg: '' });
+  }
+  
 });
 
 router.post('/', function(req, res, next) {

@@ -1183,7 +1183,7 @@ to {opacity: 1}
   display: flex;
   width: 100%;
   height: auto;
-  padding: 0;
+  padding: 4em 0 0 0;
   margin: 0;
   /*background-color: #05386B;*/
 }
@@ -2613,7 +2613,18 @@ margin-right: 1.25em;
   margin: 2em 0 1em 2em;
   color: #DEF2F1;
 }
-
+.form-class select {
+  width: 85%;
+  height: auto;
+  padding: .5em;
+  margin-left: 2em;
+  
+  /*
+  border: 2px solid #05386B;
+  */
+  border: 2px solid #DEF2F1;
+  border-radius: 5px;
+}
 .form-class form input {
   width: 85%;
   height: auto;
@@ -3084,10 +3095,10 @@ margin: auto;
 padding: 2em;
 height: auto;
 overflow: auto;
-border: 5px solid #05386B;
+border: 5px solid #FEFFFF;
 border-radius: 10px;
-background-color: rgba(238, 135, 97, .9); 
-color: #05386B; 
+background-color: #17252A; 
+color: #FEFFFF; 
 position: relative;
 animation: 1s drop;
 display: block;
@@ -3112,11 +3123,22 @@ font-size: 2em;
 }
 .X-confirmation-before-delete:hover {
 cursor: pointer;
-color: rgb(180, 175, 175);
+color: #26373d;
 
 
 }
-
+.modal-confirmation-before-delete button {
+  width: 30%;
+  background-color: #17252A; 
+  color: #FEFFFF;
+  border: 2px solid #FEFFFF;
+  border-radius: 5px;
+  padding: .5em;
+}
+.modal-confirmation-before-delete button:hover {
+  color: #2B7A78;
+  border: 2.5px solid #2B7A78;
+}
 .modal-parent-confirmation-before-delete .modal-confirmation-before-delete a {
   display: block;
   text-decoration: none;

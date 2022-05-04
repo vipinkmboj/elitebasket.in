@@ -6,7 +6,7 @@ var employeesModel = require('../models/employeessignupschema');
 var adminMembersTeamModel = require('../models/adminmembersteamschema');
 var usernamesListModel = require('../models/usernameslistschema');
 
-
+var categoryModel = require('../models/categoryschema');
 /* GET home page. */
 router.get('/',  function(req, res, next) {
   
@@ -21,15 +21,29 @@ router.get('/',  function(req, res, next) {
   } else if(loginUserAdmin) {
     res.redirect('/dashboardadmin');
   } else {
-    res.render('index', { title: 'Elite Basket', msg:''});
+
+    res.redirect('/');
+    //res.render('index', { title: 'Elite Basket', msg:'', allCategoriesData: allCategoriesData});
   } 
 });
 
 router.post('/', function(req, res, next) {
   if(process.env.PASS == req.body.adminpass) {
-    res.render('admin', { title: 'Elite Basket', msg: '' });
+    res.render('admin', { title: 'Elite Basket', msg: '', allCategoriesData: '' });
   } else {
-    res.render('index', { title: 'Elite Basket', msg: 'Incorrect Admin Pass' });
+    // Get Categories from database
+    var getAllCategories = categoryModel.find({});
+    getAllCategories.exec((err, allCategoriesData) => {
+      if(err) {
+        res.render('index', { title: 'Elite Basket', msg:'Incorrect Admin Pass', allCategoriesData: ''});
+      }
+      if(allCategoriesData != null) {
+        res.render('index', { title: 'Elite Basket', msg:'Incorrect Admin Pass', allCategoriesData: allCategoriesData});
+      } else {
+        res.render('index', { title: 'Elite Basket', msg:'Incorrect Admin Pass', allCategoriesData: ''});
+      }
+    });
+    //res.render('index', { title: 'Elite Basket', msg: 'Incorrect Admin Pass', allCategoriesData: ''});
   }
   
 

@@ -15,7 +15,9 @@ var indexRouter = require('./routes/index');
 var dashboardcustomerRouter = require('./routes/dashboardcustomer');
 var usersRouter = require('./routes/users');
 var categoriesRouter = require('./routes/categories');
+var dashboardcategoriesadminRouter = require('./routes/dashboardcategoriesadmin');
 var productsRouter = require('./routes/products');
+var dashboardproductsadminRouter = require('./routes/dashboardproductsadmin');
 var signupformadminRouter = require('./routes/signupformadmin');
 var signupadminRouter = require('./routes/signupadmin');
 var signupformemployeesRouter = require('./routes/signupformemployees');
@@ -45,6 +47,7 @@ var forgotpasswordRouter = require('./routes/forgotpassword');
 var resetpasswordRouter = require('./routes/resetpassword');
 var forgotusernameRouter = require('./routes/forgotusername');
 var getusernameRouter = require('./routes/getusername');
+var editcategoryRouter = require('./routes/editcategory');
 
 var app = express();
 
@@ -76,7 +79,9 @@ app.use('/', indexRouter);
 app.use('/dashboardcustomer', dashboardcustomerRouter);
 app.use('/users', usersRouter);
 app.use('/categories', categoriesRouter);
+app.use('/dashboardcategoriesadmin', dashboardcategoriesadminRouter);
 app.use('/products', productsRouter);
+app.use('/dashboardproductsadmin', dashboardproductsadminRouter);
 app.use('/signupformadmin', signupformadminRouter);
 app.use('/signupadmin', signupadminRouter);
 app.use('/signupformemployees', signupformemployeesRouter);
@@ -93,7 +98,7 @@ app.use('/employees', employeesRouter);
 app.use('/dashboardemployees', dashboardemployeesRouter);
 app.use('/admin', adminRouter);
 app.use('/dashboardadmin', dashboardadminRouter);
-//app.use('/dashboardwebsiteadmin', dashboardwebsiteadminRouter);
+app.use('/dashboardwebsiteadmin', dashboardwebsiteadminRouter);
 app.use('/subscribe', subscribeRouter);
 app.use('/soil', soilRouter);
 app.use('/compost', compostRouter);
@@ -104,6 +109,7 @@ app.use('/forgotpassword', forgotpasswordRouter);
 app.use('/resetpassword', resetpasswordRouter);
 app.use('/forgotusername', forgotusernameRouter);
 app.use('/getusername', getusernameRouter);
+app.use('/editcategory', editcategoryRouter);
 
 
 

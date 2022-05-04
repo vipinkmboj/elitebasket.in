@@ -5,6 +5,7 @@ var adminModel = require('../models/adminschema');
 var customerModel = require('../models/customersignupschema');
 var employeesModel = require('../models/employeessignupschema');
 var usernamesListModel = require('../models/usernameslistschema');
+var categoryModel = require('../models/categoryschema');
 //var referralCodeModel = require('../models/referralcodesschema');
 
 // Conver Currency 
@@ -62,7 +63,19 @@ router.get('/',  function(req, res, next) {
   } else if(req.session.adminLoginUserName) {
     res.redirect('/dashboardadmin');
   } else {
-    res.render('index', { title: 'Quick Website', msg:''});
+    // Get Categories from database
+    var getAllCategories = categoryModel.find({});
+    getAllCategories.exec((err, allCategoriesData) => {
+      if(err) {
+        res.render('index', { title: 'Elite Basket', msg:'', allCategoriesData: ''});
+      }
+      if(allCategoriesData != null) {
+        res.render('index', { title: 'Elite Basket', msg:'', allCategoriesData: allCategoriesData});
+      } else {
+        res.render('index', { title: 'Elite Basket', msg:'No Category Available', allCategoriesData: ''});
+      }
+    });
+    //res.render('index', { title: 'Elite Basket', msg:''});
   }  
   /*
   res.render('index', { title: 'SaReGaMa Music Academy & GMP Studio', msg:''});
@@ -120,7 +133,7 @@ router.get('/getusername/getusernamebyemail',  function(req, res, next) {
   } else if(loginUserAdmin) {
     res.redirect('/dashboardadmin');
   } else {
-    res.render('index', { title: 'Quick Website', msg:'', adminDetails: ''});
+    res.render('index', { title: 'Elite Basket', msg:'', adminDetails: ''});
   } 
 });
 
@@ -137,7 +150,7 @@ router.get('/resetpassword/updatepassword',  function(req, res, next) {
   } else if(loginUserAdmin) {
     res.redirect('/dashboardadmin');
   } else {
-    res.render('index', { title: 'Quick Website', msg:'', adminDetails: ''});
+    res.render('index', { title: 'Elite Basket', msg:'', adminDetails: ''});
   } 
 });
 
@@ -461,14 +474,14 @@ router.post('/accountactivatedcustomer', function(req, res, next) {
   var password = req.body.password;
   var confirmPassword = req.body.cnfpassword;
   if(password != confirmPassword || password == '' || confirmPassword == '') {
-    res.render('signupcustomer', { title: 'Quick Website', msg:'Password Not Matched, Please Try again', adminDetails: ''});
+    res.render('signupcustomer', { title: 'Elite Basket', msg:'Password Not Matched, Please Try again', adminDetails: ''});
   } else {
     password = bcrypt.hashSync(req.body.password, 10);
     var getcustomerDetails = customerModel.findOne({Onetimepassword: oneTimePassword}, {});
     getcustomerDetails.exec((err, ExistingCustomerDetails)=> {
       if(err) throw err;
       if(ExistingCustomerDetails == null || ExistingCustomerDetails == '') {
-        res.render('signupcustomer', { title: 'Quick Website', msg:'Wrong OTP Entered, Please Try again', adminDetails:''});
+        res.render('signupcustomer', { title: 'Elite Basket', msg:'Wrong OTP Entered, Please Try again', adminDetails:''});
 
       } else {
         var getCustomerId = ExistingCustomerDetails._id;
@@ -483,13 +496,13 @@ router.post('/accountactivatedcustomer', function(req, res, next) {
       <h3>Hi, You have successfully Registered to your account</h3>
       <p>
         Welcome ${updatedCustomerDetails.Firstname} <br/>
-        You have successfully registered for Quick Website with <br/>
+        You have successfully registered for Elite Basket with <br/>
 
         Username: ${updatedCustomerDetails.Username}, <br/>
 
         <br/><br/>
         Regards,<br/>
-        Team (Quick Website)
+        Team (Elite Basket)
         
               
       </p>   
@@ -533,9 +546,9 @@ router.post('/accountactivatedcustomer', function(req, res, next) {
   // this sends the email
   ses.sendEmail(params, (err) => {
     if(err) {
-      res.render('index', { title: 'Quick Website', msg:'Account Activated Successfully, You may log in now', adminDetails: ''});
+      res.render('index', { title: 'Elite Basket', msg:'Account Activated Successfully, You may log in now', adminDetails: ''});
     } else {
-      res.render('index', { title: 'Quick Website', msg:'Account Activated Successfully, You may log in now', adminDetails: ''});
+      res.render('index', { title: 'Elite Basket', msg:'Account Activated Successfully, You may log in now', adminDetails: ''});
     }
   });
   //
@@ -714,7 +727,7 @@ router.post('/signin', function(req, res, next) {
       //var getUserIDFromCustomersData = customerData._id;
       if(bcrypt.compareSync(password, getPasswordFromCustomersData)) {
         if(customerData.Onetimepassword != null) {
-          res.render('forgotpassword', { title: 'Quick Website', msg:'Please reset your password for seurity purposes, otherwise you will not be able to sign in' });
+          res.render('forgotpassword', { title: 'Elite Basket', msg:'Please reset your password for seurity purposes, otherwise you will not be able to sign in' });
         } else { 
           /*var customerToken = jwt.sign({userID: getUserIDFromCustomersData}, process.env.CUSTOMER_LOGIN_TOKEN_ACCESS_KEY /*, {expiresIn: 600 /*86400 = 24 hours}*/            
           //  );         
@@ -785,7 +798,7 @@ router.post('/signin', function(req, res, next) {
         //  res.redirect('/dashboardcustomer');
         }
       } else {
-        res.render('index', { title: 'Quick Website', msg:'Invalid Password' });
+        res.render('index', { title: 'Elite Basket', msg:'Invalid Password' });
       }        
     } else if(customerData == null) {
       checkUserNameInEmployeesData.exec((err, employeeData ) => {
@@ -797,7 +810,7 @@ router.post('/signin', function(req, res, next) {
         //var getUserIDFromEmployeeData = employeeData._id;        
         if(bcrypt.compareSync(password, getPasswordFromEmployeeData)) {
           if(employeeData.Onetimepassword != null) {
-            res.render('forgotpassword', { title: 'Quick Website', msg:'Please reset your password for seurity purposes, otherwise you will not be able to sign in' });
+            res.render('forgotpassword', { title: 'Elite Basket', msg:'Please reset your password for seurity purposes, otherwise you will not be able to sign in' });
           } else { 
             //var employeeToken = jwt.sign({userID: getUserIDFromEmployeeData}, process.env.CUSTOMER_LOGIN_TOKEN_ACCESS_KEY /*, {expiresIn: 600 /*86400 = 24 hours}*/
                      // );          
@@ -867,7 +880,7 @@ router.post('/signin', function(req, res, next) {
           //  res.redirect('/dashboardemployees');
           }
         } else {
-          res.render('index', { title: 'Quick Website', msg:'Invalid Password' });
+          res.render('index', { title: 'Elite Basket', msg:'Invalid Password' });
         } 
         } /*if(employeeData != null) { enda*/          
           else if(employeeData == null) {
@@ -880,7 +893,7 @@ router.post('/signin', function(req, res, next) {
        // var getUserIDFromAdminData = adminData._id;
         if(bcrypt.compareSync(password, getPasswordFromAdminData)) {
           if(adminData.Onetimepassword != null) {
-            res.render('forgotpassword', { title: 'Quick Website', msg:'Please reset your password for seurity purposes, otherwise you will not be able to sign in' });
+            res.render('forgotpassword', { title: 'Elite Basket', msg:'Please reset your password for seurity purposes, otherwise you will not be able to sign in' });
           } else { 
            // var adminToken = jwt.sign({userID: getUserIDFromAdminData}, process.env.CUSTOMER_LOGIN_TOKEN_ACCESS_KEY /*, {expiresIn: 600 /*86400 = 24 hours}*/
          
@@ -1310,7 +1323,7 @@ router.post('/uploadprofileimage', multipleUploads, function(req, res, next) {
       // first move old profile image to recyclebin then do findOneAndUpdate()      
       customerModel.findOneAndUpdate({Username: loginUser.loginUserCustomer}, {ProfileImage: `./uploads/${profileImage}`}, /*{new: true},*/ {upsert: true}, function(err) {
         if(err) {
-          res.render('dashboardcustomerprofile', { title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentLoginData: '' });
+          res.render('dashboardcustomerprofile', { title: 'Elite Basket', msg:'', loginUser: loginUser.loginUserCustomer, currentLoginData: '' });
         } else {
           res.redirect('dashboardcustomerprofile');
           //res.redirect('/');
@@ -1431,9 +1444,9 @@ router.post('/deletecustomeraccount', (req, res, next) => {
   // this sends the email
   ses.sendEmail(params, (err) => {
     if(err) {
-      res.render('index', { title: 'Quick Website', msg:'Account Deactivated! Hope To See You Again' });
+      res.render('index', { title: 'Elite Basket', msg:'Account Deactivated! Hope To See You Again' });
     } else {
-      res.render('index', { title: 'Quick Website', msg:'Account Deactivated! Hope To See You Again' });
+      res.render('index', { title: 'Elite Basket', msg:'Account Deactivated! Hope To See You Again' });
     }
   });
       //
@@ -1465,7 +1478,7 @@ router.get('/admin/signupadmin',  function(req, res, next) {
   } else if(loginUserAdmin) {
     res.redirect('/dashboardadmin');
   } else {
-    res.render('signupadmin', { title: 'Quick Website', msg:'', adminDetails: ''});
+    res.render('signupadmin', { title: 'Elite Basket', msg:'', adminDetails: ''});
   } 
 });
 
@@ -1482,7 +1495,7 @@ router.get('/admin/accountactivatedadmin',  function(req, res, next) {
   } else if(loginUserAdmin) {
     res.redirect('/dashboardadmin');
   } else {
-    res.render('index', { title: 'Quick Website', msg:'', adminDetails: ''});
+    res.render('index', { title: 'Elite Basket', msg:'', adminDetails: ''});
   } 
 });
 
@@ -1499,7 +1512,7 @@ router.get('/employees/signupemployees',  function(req, res, next) {
   } else if(loginUserAdmin) {
     res.redirect('/dashboardadmin');
   } else {
-    res.render('signupemployees', { title: 'Quick Website', msg:''});
+    res.render('signupemployees', { title: 'Elite Basket', msg:''});
   } 
 }); 
 
@@ -1516,7 +1529,7 @@ router.get('/employees/accountactivatedemployees',  function(req, res, next) {
   } else if(loginUserAdmin) {
     res.redirect('/dashboardadmin');
   } else {
-    res.render('index', { title: 'Quick Website', msg:''});
+    res.render('index', { title: 'Elite Basket', msg:''});
   } 
 });
 
@@ -1538,7 +1551,7 @@ function checkUsernameWhileCreatingReferralCode(req, res, next) {
       
       if(customerData || userNameInUsernamesList) {
 
-        return res.render('affiliatemarketerfirsttimers', {title: 'Quick Website', msg: 'Username Already Exists'});
+        return res.render('affiliatemarketerfirsttimers', {title: 'Elite Basket', msg: 'Username Already Exists'});
       
       } 
 
@@ -1562,7 +1575,7 @@ function checkUsernameWhileCreatingReferralCode(req, res, next) {
           if(err) throw err;
           if(adminData) {
 
-            return res.render('affiliatemarketerfirsttimers', {title: 'Quick Website', msg: 'Username Already Exists'});
+            return res.render('affiliatemarketerfirsttimers', {title: 'Elite Basket', msg: 'Username Already Exists'});
  
           }
           next();
@@ -1584,7 +1597,7 @@ function checkMobileNumberWhileCreatingReferralCode(req, res, next) {
     if(err) throw err;
     if(customerData) {
 
-      return res.render('affiliatemarketerfirsttimers', {title: 'Quick Website', msg: 'This Mobile Number is Already Registered with us'});
+      return res.render('affiliatemarketerfirsttimers', {title: 'Elite Basket', msg: 'This Mobile Number is Already Registered with us'});
     
     }     
     if(!customerData) {
@@ -1594,7 +1607,7 @@ function checkMobileNumberWhileCreatingReferralCode(req, res, next) {
         if(err) throw err;
         if(employeeData) {
 
-        return res.render('affiliatemarketerfirsttimers', {title: 'Quick Website', msg: 'This Mobile Number is Already Registered with us'});
+        return res.render('affiliatemarketerfirsttimers', {title: 'Elite Basket', msg: 'This Mobile Number is Already Registered with us'});
  
       }
       if(!employeeData) {
@@ -1604,7 +1617,7 @@ function checkMobileNumberWhileCreatingReferralCode(req, res, next) {
           if(err) throw err;
           if(adminData) {
 
-            return res.render('affiliatemarketerfirsttimers', {title: 'Quick Website', msg: 'This Mobile Number is Already Registered with us'});
+            return res.render('affiliatemarketerfirsttimers', {title: 'Elite Basket', msg: 'This Mobile Number is Already Registered with us'});
  
           }
           next();
@@ -1625,7 +1638,7 @@ function checkMobileNumberWhileCreatingReferralCode(req, res, next) {
     if(err) throw err;
     if(customerData) {
 
-      return res.render('affiliatemarketerfirsttimers', {title: 'Quick Website', msg: 'This Email is Already Registered with us'});
+      return res.render('affiliatemarketerfirsttimers', {title: 'Elite Basket', msg: 'This Email is Already Registered with us'});
     
     }     
     if(!customerData) {
@@ -1635,7 +1648,7 @@ function checkMobileNumberWhileCreatingReferralCode(req, res, next) {
         if(err) throw err;
         if(employeeData) {
 
-        return res.render('affiliatemarketerfirsttimers', {title: 'Quick Website', msg: 'This Email is Already Registered with us'});
+        return res.render('affiliatemarketerfirsttimers', {title: 'Elite Basket', msg: 'This Email is Already Registered with us'});
  
       }
       if(!employeeData) {
@@ -1645,7 +1658,7 @@ function checkMobileNumberWhileCreatingReferralCode(req, res, next) {
           if(err) throw err;
           if(adminData) {
 
-            return res.render('affiliatemarketerfirsttimers', {title: 'Quick Website', msg: 'This Email is Already Registered with us'});
+            return res.render('affiliatemarketerfirsttimers', {title: 'Elite Basket', msg: 'This Email is Already Registered with us'});
             
           }
           next();
@@ -1744,9 +1757,9 @@ let params = {
 // this sends the email
 ses.sendEmail(params, (err) => {
   if(err) {
-    res.render('signupcustomer', { title: 'Quick Website', msg:'Error Occured, Email Sending failed', adminDetails: ''}); 
+    res.render('signupcustomer', { title: 'Elite Basket', msg:'Error Occured, Email Sending failed', adminDetails: ''}); 
   } else {
-    res.render('signupcustomer', { title: 'Quick Website', msg:'Referral Code Created Successfully, Please check the One Time Password (OTP) sent to your Email and enter it here', adminDetails: ''}); 
+    res.render('signupcustomer', { title: 'Elite Basket', msg:'Referral Code Created Successfully, Please check the One Time Password (OTP) sent to your Email and enter it here', adminDetails: ''}); 
   }
 });
 //
@@ -1833,6 +1846,62 @@ router.get('/createreferralcodefirsttimers',  function(req, res, next) {
     res.render('affiliatemarketerfirsttimers', { title: 'Elite Basket', msg:'', adminDetails: ''});
   } 
 });
+
+//get signupadmin on this particular
+router.get('/dashboardadmin/addcategory',  function(req, res, next) {  
+  var loginUserCustomer = req.session.customerLoginUserName;//localStorage.getItem('customerLoginUserName');
+  var loginUserEmployee = req.session.employeeLoginUserName//localStorage.getItem('employeeLoginUserName');
+  var loginUserAdmin = req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName');
+  
+  if(loginUserCustomer){
+    res.redirect('/dashboardcustomer');
+  } else if(loginUserEmployee) {
+    res.redirect('/dashboardemployees');
+  } else if(loginUserAdmin) {
+    res.redirect('/dashboardadmin');
+  } else {
+    res.render('index', { title: 'Elite Basket', msg:'', adminDetails: ''});
+  } 
+});
+
+//Delete Category
+router.get('/deletecategory/:id', function(req, res, next) {
+  var loginUser = req.session.adminLoginUserName;
+  if(loginUser) {
+    var categoryId = req.params.id;
+    categoryModel.findByIdAndDelete(categoryId, (err) => {
+      if(err) {
+        res.render('dashboardcategoriesadmin', {title:'Elite Basket', msg: '', loginUser: loginUser.loginUserAdmin, allCategoriesData: ''})
+
+      } else {
+        res.render('dashboardcategoriesadmin', {title:'Elite Basket', msg: 'Category Deleted Successfully!', loginUser: loginUser.loginUserAdmin, allCategoriesData: ''})
+
+      }
+      
+    })
+  } else {
+    res.redirect('/');
+  }
+});
+
+router.get('/editcategory/:id', function(req, res, next) {
+  var loginUser = req.session.adminLoginUserName;
+  if(loginUser) {
+    var categoryId = req.params.id;
+    var getCategoryData = categoryModel.findById(categoryId);
+    getCategoryData.exec((err, existingCategoryData) => {
+      if(err) {
+        res.render('editcategory', { title: 'Elite Basket', msg: '', loginUser: loginUser, existingCategoryData: '' });
+      } else {
+        res.render('editcategory', { title: 'Elite Basket', msg: '', loginUser: loginUser, existingCategoryData: existingCategoryData });
+      }
+    });
+  } else {
+    res.redirect('/');
+  }
+});
+
+
 
 
 module.exports = router;

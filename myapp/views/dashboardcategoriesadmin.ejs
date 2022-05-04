@@ -1,0 +1,68 @@
+<%- include('dashboardheaderadmin') %>
+
+<div class="item item3 main ">
+    <div class="container welcome templates" ><!--welcome css working in this-->
+        <br/><br/><br/><br/>
+        <h2>All Categories</h2>
+
+        <% if(msg != '') { %>
+            <h2><%= msg %></h2>
+        <% } %>
+       
+                  
+       
+            
+            <div class="categories" id="categoriescontent">
+                <h5><a href="dashboardadmin/#addnewcategory">Add New Category</a></h5>
+                <div class="row">
+                    
+                    
+                    <% if(allCategoriesData.length > 0) { %>
+                        <% allCategoriesData.forEach(function(item) { %>
+        
+                  <div class="column col-1">
+                    <ul>
+                      <li>
+                        <figure>
+                          <figcaption>
+                            <a href="/soil"><strong><%= item.CategoryName %></strong></a>
+                            
+                          </figcaption>
+                          
+                          <img onclick="location.href='/soil'" src="./uploads/<%= item.CategoryImageName %>" alt="Soil" style="width:90%; height: 320px;">
+                          <figcaption>
+                            <a href="#" style="font-size: 1.25em;"><strong>Id: <%= item._id %></strong></a>
+                          </figcaption>
+                          <figcaption style="display: flex; justify-content: space-around;">
+                            
+                            <a href="/editcategory/<%= item._id %>" style="font-size: 1.25em;">Edit</a><a href="/deletecategory/<%= item._id %>" style="font-size: 1.25em;">Delete</a>
+                          </figcaption>
+                          <hr/>
+                        </figure>
+                      </li>
+                    </ul>
+                  </div>
+                  <% }) %>
+                </div>
+        
+        
+                
+              </div>
+
+              
+                        
+        <% } else { %>
+            <h3 style="text-align: center;"><%= 'No Category Available' %></h3>
+        <% } %>
+        
+        
+                        
+    </div>
+</div>
+
+<%- include('modalconfirmbeforedelete') %>
+<%- include('dashboardfooteradmin') %>
+
+
+
+

@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var outboxModel = require('../models/outboxschema');
-
+var categoryModel = require('../models/categoryschema');
 //nodemailer for sending emails from website to clients
 // var nodemailer = require('nodemailer');
 //Require multer for file upload
@@ -21,11 +21,11 @@ const storage = multer.diskStorage({
 //init upload
 const upload = multer({
   storage: storage,
-  limits: {fileSize: 1000000},
+  limits: {fileSize: 10000000000},
   fileFilter: function(req, file, cb) {
     checkFileType(file, cb);
   }
-}).single('uploadimage');
+}).single('categoryimage');
 // Check file type
 function checkFileType(file, cb) {
   // Allowed File extentions
@@ -41,6 +41,7 @@ function checkFileType(file, cb) {
 }
 var adminModel = require('../models/adminschema');
 var uploadModel = require('../models/uploadschema');
+const { all } = require('./dashboardwebsiteadmin');
 //jwt for creating a token
 //var jwt = require('jsonwebtoken');
 // require local storage 
@@ -63,8 +64,41 @@ function checkLoginUser(req, res, next) {
   next();
 }
 */
-/* GET home page. */
-/* GET home page. */
+/* GET page. */
+router.get('/',  function(req, res, next) {
+  
+  var loginUserCustomer = req.session.customerLoginUserName;//localStorage.getItem('customerLoginUserName');
+  var loginUserEmployee = req.session.employeeLoginUserName//localStorage.getItem('employeeLoginUserName');
+  var loginUserAdmin = req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName');
+  
+  if(loginUserCustomer){
+    res.redirect('/dashboardcustomer');
+  } else if(loginUserEmployee) {
+    res.redirect('/dashboardemployees');
+  } else if(loginUserAdmin) {
+    var getAllCategories = categoryModel.find({});
+    getAllCategories.exec((err, allCategoriesData) => {
+      if(err) {
+        res.render('dashboardadmin', {title: 'Elite Basket', msg: '', loginUser: loginUserAdmin, allCategoriesData: ''})
+      }
+      if(allCategoriesData != null) {
+        res.render('dashboardadmin', {title: 'Elite Basket', msg:'', loginUser: loginUserAdmin, allCategoriesData: allCategoriesData});
+
+      } else {
+        res.render('dashboardadmin', {title: 'Elite Basket', msg:'', loginUser: loginUserAdmin, allCategoriesData: ''});
+
+      }
+    });
+    //res.render('dashboardadmin', {title: 'Elite Basket', msg:'', loginUser: loginUserAdmin});
+    //res.redirect('/dashboardadmin');
+  } else {
+
+    res.redirect('/');
+    //res.render('index', { title: 'Elite Basket', msg:'', allCategoriesData: allCategoriesData});
+  } 
+});
+/* GET page. */
+/* uncomment later if needed
 router.get('/',  function(req, res, next) {
   var loginUser = {
     loginUserCustomer: req.session.customerLoginUserName,//localStorage.getItem('customerLoginUserName'),
@@ -91,24 +125,12 @@ router.get('/',  function(req, res, next) {
     res.redirect('admin');
   }   
 });
-/*
-router.get('/', checkLoginUser, function(req, res, next) {
-    var loginUserAdmin = req.session.adminLoginUserName; //localStorage.getItem('adminLoginUserName');
-      
-    var getSavedData = adminModule.findOne({Username: loginUserAdmin});
-      getSavedData.exec((err, savedData)=> {
-      if(err) throw err;
-      res.render('dashboardadmin', { title: 'Frontend Webdeveloper', loginUser: loginUserAdmin, staffdata: '', staffid: '', msg: '', file: '', uploadedImage: '', savedData: savedData });
- 
-    });   
-          
-                 
-  });
 */
 
 
   // Image or File Upload to Gallery
-  router.post('/upload', upload, /*checkLoginUser,*/ function(req, res, next) {
+  /*
+  router.post('/upload', upload, /*checkLoginUser,*/ /*function(req, res, next) {
     //var loginUser = localStorage.getItem('loginUserName');
     var loginUser = req.session.adminLoginUserName;
     if(loginUser) {
@@ -134,9 +156,12 @@ router.get('/', checkLoginUser, function(req, res, next) {
               
 
               var aws = require("aws-sdk");
+
               const ses = new aws.SES({"accessKeyId": process.env.SES_I_AM_USER_ACCESS_KEY, "secretAccessKey": process.env.SES_I_AM_USER_SECRET_ACCESS_KEY, "region": process.env.AWS_SES_REGION});
               
-              
+              */
+
+
 // Send Email from website to any email id starts here
 router.post('/Send', function(req, res, next) {
   //var loginUser = localStorage.getItem('adminLoginUserName')
@@ -258,5 +283,21 @@ uncomment it later */
 });
 // Send Email from website to any email id ends here
 
+router.post('/addcategory', upload, (req, res, next) => {
+  var loginUser = req.session.adminLoginUserName;
+  if(loginUser) {
+    var categoryDetail = new categoryModel({
+      CategoryName: req.body.categoryname,
+      CategoryImageName: req.file.filename
+    });
+    categoryDetail.save((err) => {
+      if(err) throw err;
+      res.render('dashboardadmin', { title: 'Elite Basket', loginUser: loginUser.loginUserAdmin, msg: 'Category Added Successfully!' });
+
+    });
+  } else {
+    res.redirect('/');
+  }
+});
 
 module.exports = router;

@@ -30,7 +30,7 @@ router.get('/',  function(req, res, next) {
   } else if(loginUserAdmin) {
     res.redirect('/dashboardadmin');
   } else {
-    res.render('forgotusername', { title: 'Quick Website', msg:''});
+    res.render('forgotusername', { title: 'Elite Basket', msg:''});
   }  
 });
 
